@@ -2,6 +2,12 @@ import React from 'react';
 import Button from './components/button';
 import Footer from './components/footer';
 import Order from './components/Order';
+import DiscountCard from './components/DiscountCard';
+import ProfileCard from './components/ProfileCard';
+import OrderCard from './components/OrderCard';
+import Notification from './components/notificationCard';
+
+
 import '../src/style.css'
 export default class App extends React.Component {
   render() {
@@ -19,18 +25,29 @@ export default class App extends React.Component {
     }
     let obj3 =  {
       padding: "6",
-      width: "5",
+      width: "full",
       content: "Check out",
       bgcolor: "400"
     }
+
+    let obj4 =  {
+      Name: 'John Doe', 
+      content:" 25 rue Robert Latouche, Nice, 06200, Côte D’azur, France"
+    }
+
     return (
       <div className="App">
- Components
+       Components
         <Button size= {obj} /> 
         <Button size= {obj2} /> 
         <Button size= {obj3} /> 
         <Order />
         <Footer />
+<OrderCard />
+
+<ProfileCard resources={obj4} />
+<Notification />
+<DiscountCard />
       </div>
     );
   }

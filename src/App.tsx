@@ -4,6 +4,7 @@ import OrderInfo from "./components/OrderInfo";
 import ReviewCard from "./components/ReviewCard";
 
 import "../src/style.css";
+import SecondReviewCard from "./components/ReviewCard2";
 export default class App extends React.Component<{}, { lo: number }> {
   
 
@@ -35,6 +36,7 @@ export default class App extends React.Component<{}, { lo: number }> {
         <Button properties={obj3} />
       <OrderInfo resources={obj5}  isDiscount = {false} />
       <ReviewCard productInfo= {obj6} />
+      <SecondReviewCard />
       </div>
     );
   }

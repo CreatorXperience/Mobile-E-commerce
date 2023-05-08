@@ -3,7 +3,6 @@ import React from 'react'
 type forReviewCardProps = {
   productInfo: {
     product: string,
-    imageLink: string,
     amount: number,
     date: string,
     review: string
@@ -13,8 +12,8 @@ const  ReviewCard = ({productInfo}: forReviewCardProps) => {
     return (
         <div className='container w-100 bg-white shadow-md rounded-md py-4'> 
         <div className='flex'> 
-        <img src={productInfo.imageLink} alt='myimage' className='w-20 rounded-lg mx-5'/>
-        <div> 
+        <img src='https://i.pinimg.com/564x/db/82/fa/db82fa405d01f15b81eb36cfa0c3ad4e.jpg' alt='myimage' className='w-20 rounded-lg mx-5'/>
+        <div className='' > 
         <div className='text-gray-500 text-2xl'> {productInfo.product} </div>
         <div className='text-gray-900 font-bold text-xl'> $<span>{productInfo.amount}</span>.00 </div>
         </div>

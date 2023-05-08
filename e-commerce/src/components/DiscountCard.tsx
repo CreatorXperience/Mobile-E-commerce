@@ -10,14 +10,12 @@ const handleDeleteInputValue = ()=> {
         inputRef.current.value = ''
         setInputValue('')
         console.log(inputValue);
-        
     }
 }
 const handleChageEvent = (e:React.ChangeEvent<HTMLInputElement>)=> {
     let value = e.target.value
     if(value === ''){
         setIcon(Svg.forwardLight())
-
     }
     else{
         setIcon(Svg.recycleBinLight())

@@ -6,9 +6,7 @@ import NotificationSetting from "./components/NotificationSetting";
 
 import "../src/style.css";
 import SecondReviewCard from "./components/ReviewCard2";
-export default class App extends React.Component<{}, { lo: number }> {
-  render() {
-   
+const App = () =>  {
     let obj3 = {
       padding: "6px",
       width: "full",
@@ -41,4 +39,5 @@ export default class App extends React.Component<{}, { lo: number }> {
       </div>
     );
   }
-}
+
+export default App

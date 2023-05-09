@@ -19,7 +19,7 @@ const SelectCountryInput = ({ className }: SelectProps) => {
         <div className="flex justify-between pr-2  cursor-pointer mt-2">
           <span className="text-[15px] font-semibold"> {country}</span>
           <span onClick={() => setSelectCountry((perv) => !perv)}>
-            {Svg.baseline()}
+            {Svg.dropdown()}
           </span>
         </div>
         <ul

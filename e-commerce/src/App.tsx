@@ -1,3 +1,4 @@
+ft-input-component
 import React, { useState } from "react";
 import Button from "./components/button";
 import Footer from "./components/footer";
@@ -5,6 +6,7 @@ import Order from "./components/Order";
 import cardSvg from "../src/assets/card.png";
 import SumPrice from "./components/SumPrice";
 import Svg from "./components/icons/Svg";
+
 
 import "../src/style.css";
 import Input from "./components/Input";

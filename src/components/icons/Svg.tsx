@@ -9,8 +9,7 @@ darkShoppingBag(): ReactElement,
 cart(): ReactElement,
 edit(): ReactElement,
 recycleBin(): ReactElement,
-recycleBinLight(): ReactElement
-add(): ReactElement,
+add(): string,
 search(): ReactElement,
 home():ReactElement,
 save(): ReactElement,
@@ -19,7 +18,6 @@ user(): ReactElement,
 back(): ReactElement,
 visible(): ReactElement,
 forward(): ReactElement,
-forwardLight(): ReactElement
 dropdown(): ReactElement,
 time(): ReactElement,
 darkbag():ReactElement
@@ -30,10 +28,12 @@ darkbag():ReactElement
 const Svg:forSvg = {
     close(){
         return (
+           
             <svg  width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" onClick={()=>  console.log('i am clicked') }>
             <path fillRule="evenodd" clipRule="evenodd" d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22ZM11.7436 10.9121L14.2766 8.37915C14.577 8.07875 15.064 8.07875 15.3644 8.37915C15.6648 8.67955 15.6648 9.1666 15.3644 9.46701L12.8314 12L15.3645 14.533C15.6649 14.8334 15.6649 15.3205 15.3645 15.6209C15.0641 15.9213 14.577 15.9213 14.2766 15.6209L11.7436 13.0879L9.21059 15.6209C8.91019 15.9213 8.42314 15.9213 8.12274 15.6209C7.82233 15.3204 7.82233 14.8334 8.12274 14.533L10.6557 12L8.12276 9.46703C7.82236 9.16663 7.82236 8.67958 8.12276 8.37917C8.42317 8.07877 8.91022 8.07877 9.21062 8.37917L11.7436 10.9121ZM3.53846 12C3.53846 16.6732 7.32682 20.4615 12 20.4615C16.6732 20.4615 20.4615 16.6732 20.4615 12C20.4615 7.32682 16.6732 3.53846 12 3.53846C7.32682 3.53846 3.53846 7.32682 3.53846 12Z" fill="#242424"/>
             </svg>
         )
+        
     },
 
     arrow(){
@@ -93,28 +93,19 @@ const Svg:forSvg = {
 
         )
      },
-     recycleBinLight() {
-         return (
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M3 6H5H21" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-<path d="M8 6V4C8 3.46957 8.21071 2.96086 8.58579 2.58579C8.96086 2.21071 9.46957 2 10 2H14C14.5304 2 15.0391 2.21071 15.4142 2.58579C15.7893 2.96086 16 3.46957 16 4V6M19 6V20C19 20.5304 18.7893 21.0391 18.4142 21.4142C18.0391 21.7893 17.5304 22 17 22H7C6.46957 22 5.96086 21.7893 5.58579 21.4142C5.21071 21.0391 5 20.5304 5 20V6H19Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-</svg>
-
-         )
-     },
 
      add(){
 return (
-    <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+    `<svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g id="plus">
 <path id="&#240;&#159;&#142;&#168; Icon &#208;&#161;olor" d="M19 11.5H13V5.5C13 4.947 12.552 4.5 12 4.5C11.448 4.5 11 4.947 11 5.5V11.5H5C4.448 11.5 4 11.947 4 12.5C4 13.053 4.448 13.5 5 13.5H11V19.5C11 20.053 11.448 20.5 12 20.5C12.552 20.5 13 20.053 13 19.5V13.5H19C19.552 13.5 20 13.053 20 12.5C20 11.947 19.552 11.5 19 11.5" fill="#242424"/>
-<mask id="mask0_313_659" style={{maskType:"luminance"}} maskUnits="userSpaceOnUse" x="4" y="4" width="16" height="17">
+<mask id="mask0_313_659" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="4" y="4" width="16" height="17">
 <path id="&#240;&#159;&#142;&#168; Icon &#208;&#161;olor_2" d="M19 11.5H13V5.5C13 4.947 12.552 4.5 12 4.5C11.448 4.5 11 4.947 11 5.5V11.5H5C4.448 11.5 4 11.947 4 12.5C4 13.053 4.448 13.5 5 13.5H11V19.5C11 20.053 11.448 20.5 12 20.5C12.552 20.5 13 20.053 13 19.5V13.5H19C19.552 13.5 20 13.053 20 12.5C20 11.947 19.552 11.5 19 11.5" fill="white"/>
 </mask>
 <g mask="url(#mask0_313_659)">
 </g>
 </g>
-</svg>
+</svg>`
 
 )
      },
@@ -169,7 +160,7 @@ back(){
 },
 visible(){
     return (
-        <svg width="20" height="20"  viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M2 9.5C2 9.5 4.90909 4 10 4C15.0909 4 18 9.5 18 9.5C18 9.5 15.0909 15 10 15C4.90909 15 2 9.5 2 9.5Z" stroke="#242424" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
         <path d="M10 12C11.1046 12 12 10.8807 12 9.5C12 8.11929 11.1046 7 10 7C8.89543 7 8 8.11929 8 9.5C8 10.8807 8.89543 12 10 12Z" stroke="#242424" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
         </svg>
@@ -196,13 +187,6 @@ dropdown(){
 </defs>
 </svg>
 
-    )
-},
-forwardLight() {
-    return(
-        <svg width="10" height="18" viewBox="0 0 10 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M0.999998 17L9 9L0.999997 0.999997" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-</svg>
     )
 },
 time(){

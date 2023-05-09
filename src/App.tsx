@@ -2,12 +2,11 @@ import React from "react";
 import Button from "./components/button";
 import OrderInfo from "./components/OrderInfo";
 import ReviewCard from "./components/ReviewCard";
+import NotificationSetting from "./components/NotificationSetting";
 
 import "../src/style.css";
 import SecondReviewCard from "./components/ReviewCard2";
 export default class App extends React.Component<{}, { lo: number }> {
-  
-
   render() {
    
     let obj3 = {
@@ -38,6 +37,7 @@ export default class App extends React.Component<{}, { lo: number }> {
       <OrderInfo resources={obj5}  isDiscount = {false} />
       <ReviewCard productInfo= {obj6} />
       <SecondReviewCard productInfo = {obj6} />
+      <NotificationSetting />
       </div>
     );
   }

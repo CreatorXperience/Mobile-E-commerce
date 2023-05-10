@@ -84,8 +84,12 @@ const App = () =>  {
       <OrderInfo resources={obj5}  isDiscount = {false} />
       <ReviewCard productInfo= {obj6} />
       <SecondReviewCard productInfo = {obj6} />
+
+      <NotificationSetting content="New arrivals" />
+
       <NotificationSetting />
       <InfoBar content='Already have 10 orders'/>
+
       </div>
     );
   }

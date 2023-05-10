@@ -6,6 +6,7 @@ import NotificationSetting from "./components/NotificationSetting";
 import SecondReviewCard from "./components/ReviewCard2";
 import "../src/style.css";
 import { Faq } from "./components/Faq";
+import InfoBar from "./components/infoBar";
 
 const App = () => {
   let obj3 = {
@@ -38,8 +39,8 @@ const App = () => {
       <OrderInfo resources={obj5} isDiscount={false} />
       <ReviewCard productInfo={obj6} />
       <SecondReviewCard productInfo={obj6} />
-      <NotificationSetting />
-      
+      <NotificationSetting content="Delivery"/>
+      <InfoBar content='Already have 10 orders' />
     </div>
   );
 };

@@ -3,8 +3,42 @@
 @tailwind utilities;
 
 .switch {
+
   width: 100px;
   height: 100px;
   background-color: black;
   border-radius: 30px;
 }
+
+width: 60px;
+height: 30px;
+background-color: rgb(206, 210, 209);
+border-radius: 30px;
+display: inline-block;
+position: relative;
+}
+
+
+.switch:before {
+    content: '';
+    width: 30px;
+    height: 30px; 
+    background-color: white;  
+    display: inline-block;
+    position: absolute;
+    border-radius: 50%;
+    left: 0;
+    transition:  .4s ease-in-out;
+}
+.inp:checked + .switch:before  {
+left: 30px;
+}
+.inp:checked + .switch {
+    background-color: rgb(4, 168, 127);
+}
+
+.inp{
+    display: none;
+}
+
+

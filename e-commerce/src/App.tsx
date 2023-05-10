@@ -8,6 +8,7 @@ import cardSvg from "../assets/card.png";
 import SecondReviewCard from "./components/ReviewCard2";
 import ItemCard from "./components/ItemCard";
 import "../src/style.css";
+import { Faq } from "./components/Faq";
 const App = () => {
   let obj3 = {
     padding: "6px",
@@ -34,6 +35,7 @@ const App = () => {
 
   return (
     <div className="App">
+      <Faq />
       <Button properties={obj3} />
       <OrderInfo resources={obj5} isDiscount={false} />
       <ReviewCard productInfo={obj6} />

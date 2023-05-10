@@ -24,6 +24,7 @@ type forSvg = {
   time(): ReactElement;
   darkbag(): ReactElement;
   favorite(): ReactElement;
+  dropdown2(): ReactElement;
 };
 
 // TODO add className = 'fill-gray-900' on different route
@@ -553,6 +554,25 @@ const Svg: forSvg = {
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
+        />
+      </svg>
+    );
+  },
+  dropdown2() {
+    return (
+      <svg
+        width="20"
+        height="21"
+        viewBox="0 0 20 21"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M13.25 4L6.75 10.5L13.25 17"
+          stroke="#242424"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
         />
       </svg>
     );

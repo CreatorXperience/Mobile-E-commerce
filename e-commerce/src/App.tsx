@@ -85,7 +85,7 @@ const App = () =>  {
       <ReviewCard productInfo= {obj6} />
       <SecondReviewCard productInfo = {obj6} />
       <NotificationSetting />
-      <InfoBar />
+      <InfoBar content='Already have 10 orders'/>
       </div>
     );
   }

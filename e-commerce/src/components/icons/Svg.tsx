@@ -9,7 +9,8 @@ type forSvg = {
   cart(): ReactElement;
   edit(): ReactElement;
   recycleBin(): ReactElement;
-  add(): string;
+  recycleBinLight(): ReactElement;
+  add(): ReactElement;
   search(): ReactElement;
   home(): ReactElement;
   save(): ReactElement;
@@ -18,10 +19,10 @@ type forSvg = {
   back(): ReactElement;
   visible(): ReactElement;
   forward(): ReactElement;
+  forwardLight(): ReactElement;
   dropdown(): ReactElement;
   time(): ReactElement;
   darkbag(): ReactElement;
-  baseline(): ReactElement;
   favorite(): ReactElement;
 };
 
@@ -183,20 +184,7 @@ const Svg: forSvg = {
       </svg>
     );
   },
-
-  add() {
-    return `<svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g id="plus">
-<path id="&#240;&#159;&#142;&#168; Icon &#208;&#161;olor" d="M19 11.5H13V5.5C13 4.947 12.552 4.5 12 4.5C11.448 4.5 11 4.947 11 5.5V11.5H5C4.448 11.5 4 11.947 4 12.5C4 13.053 4.448 13.5 5 13.5H11V19.5C11 20.053 11.448 20.5 12 20.5C12.552 20.5 13 20.053 13 19.5V13.5H19C19.552 13.5 20 13.053 20 12.5C20 11.947 19.552 11.5 19 11.5" fill="#242424"/>
-<mask id="mask0_313_659" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="4" y="4" width="16" height="17">
-<path id="&#240;&#159;&#142;&#168; Icon &#208;&#161;olor_2" d="M19 11.5H13V5.5C13 4.947 12.552 4.5 12 4.5C11.448 4.5 11 4.947 11 5.5V11.5H5C4.448 11.5 4 11.947 4 12.5C4 13.053 4.448 13.5 5 13.5H11V19.5C11 20.053 11.448 20.5 12 20.5C12.552 20.5 13 20.053 13 19.5V13.5H19C19.552 13.5 20 13.053 20 12.5C20 11.947 19.552 11.5 19 11.5" fill="white"/>
-</mask>
-<g mask="url(#mask0_313_659)">
-</g>
-</g>
-</svg>`;
-  },
-  search() {
+  recycleBinLight() {
     return (
       <svg
         width="24"
@@ -206,9 +194,55 @@ const Svg: forSvg = {
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
-          d="M11 2C15.968 2 20 6.032 20 11C20 15.968 15.968 20 11 20C6.032 20 2 15.968 2 11C2 6.032 6.032 2 11 2ZM11 18C14.867 18 18 14.867 18 11C18 7.132 14.867 4 11 4C7.132 4 4 7.132 4 11C4 14.867 7.132 18 11 18ZM19.485 18.071L22.314 20.899L20.899 22.314L18.071 19.485L19.485 18.071Z"
-          fill="#242424"
+          d="M3 6H5H21"
+          stroke="white"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
+        <path
+          d="M8 6V4C8 3.46957 8.21071 2.96086 8.58579 2.58579C8.96086 2.21071 9.46957 2 10 2H14C14.5304 2 15.0391 2.21071 15.4142 2.58579C15.7893 2.96086 16 3.46957 16 4V6M19 6V20C19 20.5304 18.7893 21.0391 18.4142 21.4142C18.0391 21.7893 17.5304 22 17 22H7C6.46957 22 5.96086 21.7893 5.58579 21.4142C5.21071 21.0391 5 20.5304 5 20V6H19Z"
+          stroke="white"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    );
+  },
+
+  add() {
+    return (
+      <svg
+        width="24"
+        height="25"
+        viewBox="0 0 24 25"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <g id="plus">
+          <path
+            id="&#240;&#159;&#142;&#168; Icon &#208;&#161;olor"
+            d="M19 11.5H13V5.5C13 4.947 12.552 4.5 12 4.5C11.448 4.5 11 4.947 11 5.5V11.5H5C4.448 11.5 4 11.947 4 12.5C4 13.053 4.448 13.5 5 13.5H11V19.5C11 20.053 11.448 20.5 12 20.5C12.552 20.5 13 20.053 13 19.5V13.5H19C19.552 13.5 20 13.053 20 12.5C20 11.947 19.552 11.5 19 11.5"
+            fill="#242424"
+          />
+          <mask
+            id="mask0_313_659"
+            style={{ maskType: "luminance" }}
+            maskUnits="userSpaceOnUse"
+            x="4"
+            y="4"
+            width="16"
+            height="17"
+          >
+            <path
+              id="&#240;&#159;&#142;&#168; Icon &#208;&#161;olor_2"
+              d="M19 11.5H13V5.5C13 4.947 12.552 4.5 12 4.5C11.448 4.5 11 4.947 11 5.5V11.5H5C4.448 11.5 4 11.947 4 12.5C4 13.053 4.448 13.5 5 13.5H11V19.5C11 20.053 11.448 20.5 12 20.5C12.552 20.5 13 20.053 13 19.5V13.5H19C19.552 13.5 20 13.053 20 12.5C20 11.947 19.552 11.5 19 11.5"
+              fill="white"
+            />
+          </mask>
+          <g mask="url(#mask0_313_659)"></g>
+        </g>
       </svg>
     );
   },
@@ -248,6 +282,23 @@ const Svg: forSvg = {
           d="M4.9972 21.2499H4.99696C4.91804 21.2499 4.86597 21.2156 4.84061 21.1813C4.79355 21.1175 4.75 21.0185 4.75 20.8638V3.69774C4.75 3.2668 5.21468 2.75 5.8818 2.75H18.1849C18.8157 2.75 19.25 3.23343 19.25 3.69774V20.8639C19.25 21.1034 19.1815 21.1879 19.1626 21.2076C19.1408 21.2303 19.1058 21.25 19.0466 21.25C18.9832 21.25 18.8607 21.2254 18.6658 21.0684L18.6651 21.0679L13.1799 16.6616C12.8548 16.3997 12.4369 16.2799 12.0414 16.2799C11.6469 16.2799 11.2286 16.3991 10.9037 16.6605C10.9034 16.6607 10.9031 16.661 10.9028 16.6612L5.40009 21.0679L5.39836 21.0693C5.21683 21.2155 5.0733 21.2499 4.9972 21.2499Z"
           stroke="#999999"
           strokeWidth="1.5"
+        />
+      </svg>
+    );
+  },
+
+  search() {
+    return (
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M11 2C15.968 2 20 6.032 20 11C20 15.968 15.968 20 11 20C6.032 20 2 15.968 2 11C2 6.032 6.032 2 11 2ZM11 18C14.867 18 18 14.867 18 11C18 7.132 14.867 4 11 4C7.132 4 4 7.132 4 11C4 14.867 7.132 18 11 18ZM19.485 18.071L22.314 20.899L20.899 22.314L18.071 19.485L19.485 18.071Z"
+          fill="#242424"
         />
       </svg>
     );
@@ -364,31 +415,50 @@ const Svg: forSvg = {
   dropdown() {
     return (
       <svg
-        width="20"
-        height="21"
-        viewBox="0 0 20 21"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <g clip-path="url(#clip0_313_739)">
-          <path
-            d="M6.175 7.65833L10 11.475L13.825 7.65833L15 8.83333L10 13.8333L5 8.83333L6.175 7.65833Z"
-            fill="#242424"
-          />
-        </g>
-        <defs>
-          <clipPath id="clip0_313_739">
-            <rect
-              width="20"
-              height="20"
-              fill="white"
-              transform="translate(0 0.5)"
-            />
-          </clipPath>
-        </defs>
+        <path
+          d="M9 18L15 12L9 6"
+          stroke="#242424"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
       </svg>
     );
   },
+  // dropdown() {
+  //   return (
+  //     <svg
+  //       width="20"
+  //       height="21"
+  //       viewBox="0 0 20 21"
+  //       fill="none"
+  //       xmlns="http://www.w3.org/2000/svg"
+  //     >
+  //       <g clip-path="url(#clip0_313_739)">
+  //         <path
+  //           d="M6.175 7.65833L10 11.475L13.825 7.65833L15 8.83333L10 13.8333L5 8.83333L6.175 7.65833Z"
+  //           fill="#242424"
+  //         />
+  //       </g>
+  //       <defs>
+  //         <clipPath id="clip0_313_739">
+  //           <rect
+  //             width="20"
+  //             height="20"
+  //             fill="white"
+  //             transform="translate(0 0.5)"
+  //           />
+  //         </clipPath>
+  //       </defs>
+  //     </svg>
+  //   );
+  // },
   time() {
     return (
       <svg
@@ -440,78 +510,50 @@ const Svg: forSvg = {
       </svg>
     );
   },
-
-  // time() {
-  //   return (
-  //     <svg
-  //       width="20"
-  //       height="20"
-  //       viewBox="0 0 20 20"
-  //       fill="none"
-  //       xmlns="http://www.w3.org/2000/svg"
-  //     >
-  //       <g clipPath="url(#clip0_313_1384)">
-  //         <path
-  //           d="M9.99984 18.3334C14.6022 18.3334 18.3332 14.6024 18.3332 10C18.3332 5.39765 14.6022 1.66669 9.99984 1.66669C5.39746 1.66669 1.6665 5.39765 1.6665 10C1.6665 14.6024 5.39746 18.3334 9.99984 18.3334Z"
-  //           stroke="#242424"
-  //           strokeWidth="1.5"
-  //           strokeLinecap="round"
-  //           strokeLinejoin="round"
-  //         />
-  //         <path
-  //           d="M10 5V10L13.3333 11.6667"
-  //           stroke="#242424"
-  //           strokeWidth="1.5"
-  //           strokeLinecap="round"
-  //           strokeLinejoin="round"
-  //         />
-  //       </g>
-  //       <defs>
-  //         <clipPath id="clip0_313_1384">
-  //           <rect width="20" height="20" fill="white" />
-  //         </clipPath>
-  //       </defs>
-  //     </svg>
-  //   );
-  // },
-
   favorite() {
     return (
       <svg
-        width="30"
-        height="30"
-        viewBox="0 0 30 30"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <rect width="30" height="30" rx="4" fill="#606060" fill-opacity="0.4" />
-        <path
-          d="M22.9687 21.3106L21.6667 9.06063C21.6667 8.29047 21.07 7.66669 20.3333 7.66669H15H9.66667C8.93 7.66669 8.33333 8.29047 8.33333 9.06063L7.03133 21.3106C7.012 21.406 7 21.5043 7 21.6061C7 22.3762 7.59667 23 8.33333 23H15H21.6667C22.4033 23 23 22.3762 23 21.6061C23 21.5043 22.988 21.406 22.9687 21.3106ZM18.3333 11.0874V11.8485C18.3333 13.7701 16.838 15.3334 15 15.3334C13.162 15.3334 11.6667 13.7701 11.6667 11.8485V11.0874C11.2793 10.9438 11 10.5605 11 10.1061C11 9.52899 11.448 9.06063 12 9.06063C12.552 9.06063 13 9.52899 13 10.1061V11.8485C13 13.0013 13.8973 13.9394 15 13.9394C16.1027 13.9394 17 13.0013 17 11.8485V10.1061C17 9.52899 17.448 9.06063 18 9.06063C18.552 9.06063 19 9.52899 19 10.1061C19 10.5605 18.7207 10.9438 18.3333 11.0874Z"
-          fill="white"
-        />
-      </svg>
-    );
-  },
-  baseline() {
-    return (
-      <svg
         width="20"
-        height="20"
-        viewBox="0 0 20 20"
+        height="21"
+        viewBox="0 0 20 21"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <g clip-path="url(#clip0_313_740)">
+        <g clipPath="url(#clip0_313_739)">
           <path
-            d="M6.175 7.15833L10 10.975L13.825 7.15833L15 8.33333L10 13.3333L5 8.33333L6.175 7.15833Z"
+            d="M6.175 7.65833L10 11.475L13.825 7.65833L15 8.83333L10 13.8333L5 8.83333L6.175 7.65833Z"
             fill="#242424"
           />
         </g>
         <defs>
-          <clipPath id="clip0_313_740">
-            <rect width="20" height="20" fill="white" />
+          <clipPath id="clip0_313_739">
+            <rect
+              width="20"
+              height="20"
+              fill="white"
+              transform="translate(0 0.5)"
+            />
           </clipPath>
         </defs>
+      </svg>
+    );
+  },
+  forwardLight() {
+    return (
+      <svg
+        width="10"
+        height="18"
+        viewBox="0 0 10 18"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M0.999998 17L9 9L0.999997 0.999997"
+          stroke="white"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
       </svg>
     );
   },

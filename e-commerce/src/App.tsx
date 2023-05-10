@@ -35,7 +35,7 @@ const App = () =>  {
       <OrderInfo resources={obj5}  isDiscount = {false} />
       <ReviewCard productInfo= {obj6} />
       <SecondReviewCard productInfo = {obj6} />
-      <NotificationSetting />
+      <NotificationSetting content="New arrivals" />
       </div>
     );
   }

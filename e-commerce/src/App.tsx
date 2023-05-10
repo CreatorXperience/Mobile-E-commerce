@@ -6,6 +6,7 @@ import NotificationSetting from "./components/NotificationSetting";
 
 import "../src/style.css";
 import SecondReviewCard from "./components/ReviewCard2";
+import InfoBar from "./components/infoBar";
 const App = () =>  {
     let obj3 = {
       padding: "6px",
@@ -36,6 +37,7 @@ const App = () =>  {
       <ReviewCard productInfo= {obj6} />
       <SecondReviewCard productInfo = {obj6} />
       <NotificationSetting />
+      <InfoBar />
       </div>
     );
   }

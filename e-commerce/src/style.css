@@ -32,5 +32,20 @@ left: 30px;
 .inp{
     display: none;
 }
+*{
+    margin: 0;
+    padding:  0;
+}
+body{
+    width: 100%;
+}
 
-
+#Jump {
+animation-name: jump;
+animation-timing-function: ease-in-out;
+animation-duration: .5s;
+}
+@keyframes jump {
+    0% { transform: translateY(-100%) }
+    100%{transform: translateY(5%)}
+  }

@@ -1,4 +1,5 @@
-[
+ {
+    "products": [
   {
         "Bed": {
                 "product-image-link": "https://i.pinimg.com/564x/02/0e/98/020e980b8b493d30f6a98aee569f105b.jpg",
@@ -194,3 +195,4 @@
     }
 ]
 
+}

@@ -5,13 +5,12 @@ const Footer = ()=>{
     // let [initialState, setInitialState]=  useState("hi")
     
     return (
-        <div className='container w-90 py-6 px-4 my-4 mx-2 bg-gray-100 flex rounded-sm shadow-md'>  
+        <div className='container w-[100%] py-6 px-4   bg-white flex rounded-sm shadow-2xl fixed bottom-0 translate-y-[10%] '>  
        <div className="container flex justify-between w-100"> 
-       {Svg.close()}
-      {Svg.home()}
-      {Svg.save()}
-      {Svg.notification()}
-      {Svg.user()}
+    <p>{Svg.home()} </p>  
+      <p>{Svg.save()}</p>
+     <p> {Svg.notification()} </p> 
+      <p> {Svg.user()} </p> 
        </div>
         
         </div>

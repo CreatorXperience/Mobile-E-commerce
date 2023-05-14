@@ -38,6 +38,7 @@ left: 30px;
 }
 body{
     width: 100%;
+    height: 100vh;
 }
 
 #Jump {

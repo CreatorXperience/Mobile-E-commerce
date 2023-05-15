@@ -1,17 +1,88 @@
-import React from 'react'
-import Svg from './icons/Svg'
+import React,{useState} from 'react'
 
-const Footer = ()=>{
-    // let [initialState, setInitialState]=  useState("hi")
-    
+type forFooter =  {
+page: string
+}
+
+const Footer = ({page}:forFooter)=>{
+  
+    let [colorState, setColorState]=  useState(page)
+    let handleIconColor = (e:React.MouseEvent<SVGElement>,page:string)=> {
+setColorState(page)
+}
     return (
-        <div className='container w-90 py-6 px-4 my-4 mx-2 bg-gray-100 flex rounded-sm shadow-md'>  
+        <div className='container w-[100%] py-5 px-8 md:translate-x-[5%]  bg-white flex rounded-sm shadow-2xl  fixed bottom-0 translate-y-[10%] '>  
        <div className="container flex justify-between w-100"> 
-       {Svg.close()}
-      {Svg.home()}
-      {Svg.save()}
-      {Svg.notification()}
-      {Svg.user()}
+    <p>  <svg  onClick={(e)=> handleIconColor(e,"home")}
+        className=""
+        width="22"
+        height="22"
+        viewBox="0 0 24 24"
+        fill={colorState === 'home'? "black": "none"}
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M22 12.6667C21.9123 12.6672 21.8253 12.6504 21.7441 12.6172C21.6629 12.584 21.589 12.5351 21.5267 12.4733L12 2.94001L2.47335 12.4733C2.34582 12.5826 2.18177 12.6396 2.01398 12.6331C1.8462 12.6267 1.68704 12.5571 1.56831 12.4384C1.44958 12.3197 1.38002 12.1605 1.37354 11.9927C1.36706 11.8249 1.42413 11.6609 1.53335 11.5333L11.5334 1.53334C11.6583 1.40917 11.8272 1.33948 12.0034 1.33948C12.1795 1.33948 12.3484 1.40917 12.4733 1.53334L22.4733 11.5333C22.5651 11.6269 22.6272 11.7455 22.6519 11.8742C22.6767 12.0029 22.6629 12.136 22.6124 12.2569C22.5619 12.3779 22.4769 12.4812 22.368 12.5541C22.2591 12.627 22.1311 12.6661 22 12.6667Z"
+          fill={colorState === 'home'? "black": "gray"}
+        />
+        <path
+          d="M10 15.25H9.25V16V21.9166H5.33333C5.17862 21.9166 5.03025 21.8552 4.92086 21.7458C4.81146 21.6364 4.75 21.488 4.75 21.3333V13.5299L12.0015 6.25418L19.25 13.4845V21.3333C19.25 21.488 19.1885 21.6364 19.0791 21.7458C18.9698 21.8552 18.8214 21.9166 18.6667 21.9166H14.75V16V15.25H14H10Z"
+          stroke={colorState === 'home'? "black": "gray"}
+          strokeWidth="1.5"
+        />
+      </svg> </p> 
+
+
+      <p> <svg  onClick={(e)=> handleIconColor(e,"favorite")}
+        width="22"
+        height="22"
+        viewBox="0 0 24 24"
+        fill={colorState === 'favorite'? "black": "none"}
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M4.9972 21.2499H4.99696C4.91804 21.2499 4.86597 21.2156 4.84061 21.1813C4.79355 21.1175 4.75 21.0185 4.75 20.8638V3.69774C4.75 3.2668 5.21468 2.75 5.8818 2.75H18.1849C18.8157 2.75 19.25 3.23343 19.25 3.69774V20.8639C19.25 21.1034 19.1815 21.1879 19.1626 21.2076C19.1408 21.2303 19.1058 21.25 19.0466 21.25C18.9832 21.25 18.8607 21.2254 18.6658 21.0684L18.6651 21.0679L13.1799 16.6616C12.8548 16.3997 12.4369 16.2799 12.0414 16.2799C11.6469 16.2799 11.2286 16.3991 10.9037 16.6605C10.9034 16.6607 10.9031 16.661 10.9028 16.6612L5.40009 21.0679L5.39836 21.0693C5.21683 21.2155 5.0733 21.2499 4.9972 21.2499Z"
+          stroke={colorState === 'favorite'? "black": "gray"}
+          strokeWidth="1.5"
+        />
+      </svg> </p>
+
+     <p> <svg onClick={(e)=> handleIconColor(e,"notification") }
+        width="22"
+        height="22"
+        viewBox="0 0 24 24"
+        fill={colorState === 'notification'? "black": "none"}
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M18 8C18 6.4087 17.3679 4.88258 16.2426 3.75736C15.1174 2.63214 13.5913 2 12 2C10.4087 2 8.88258 2.63214 7.75736 3.75736C6.63214 4.88258 6 6.4087 6 8C6 15 3 17 3 17H21C21 17 18 15 18 8Z"
+          stroke={colorState === 'notification'? "black": "gray"}
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <path
+          d="M13.73 21C13.5542 21.3031 13.3019 21.5547 12.9982 21.7295C12.6946 21.9044 12.3504 21.9965 12 21.9965C11.6496 21.9965 11.3054 21.9044 11.0018 21.7295C10.6982 21.5547 10.4458 21.3031 10.27 21"
+          stroke={colorState === 'notification'? "black": "gray"}
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg> </p> 
+
+      <p> <svg onClick={(e)=> handleIconColor(e,"profile")}
+        width="22"
+        height="22"
+        viewBox="0 0 24 24"
+        fill=''
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          clipRule="evenodd"
+          d="M19.5 21C19.5 21 21 21 21 19.5C21 18 19.5 13.5 12 13.5C4.5 13.5 3 18 3 19.5C3 21 4.5 21 4.5 21H19.5ZM4.5075 19.584V19.581V19.584ZM4.533 19.5H19.467C19.474 19.4992 19.481 19.4982 19.488 19.497L19.5 19.494C19.4985 19.125 19.269 18.015 18.252 16.998C17.274 16.02 15.4335 15 12 15C8.565 15 6.726 16.02 5.748 16.998C4.731 18.015 4.503 19.125 4.5 19.494C4.51098 19.4961 4.52198 19.4981 4.533 19.5ZM19.494 19.584V19.581V19.584ZM12 10.5C12.7956 10.5 13.5587 10.1839 14.1213 9.62132C14.6839 9.05871 15 8.29565 15 7.5C15 6.70435 14.6839 5.94129 14.1213 5.37868C13.5587 4.81607 12.7956 4.5 12 4.5C11.2044 4.5 10.4413 4.81607 9.87868 5.37868C9.31607 5.94129 9 6.70435 9 7.5C9 8.29565 9.31607 9.05871 9.87868 9.62132C10.4413 10.1839 11.2044 10.5 12 10.5ZM16.5 7.5C16.5 8.69347 16.0259 9.83807 15.182 10.682C14.3381 11.5259 13.1935 12 12 12C10.8065 12 9.66193 11.5259 8.81802 10.682C7.97411 9.83807 7.5 8.69347 7.5 7.5C7.5 6.30653 7.97411 5.16193 8.81802 4.31802C9.66193 3.47411 10.8065 3 12 3C13.1935 3 14.3381 3.47411 15.182 4.31802C16.0259 5.16193 16.5 6.30653 16.5 7.5Z"
+          fill={colorState === 'profile'? "black": "gray"}
+        />
+      </svg> </p> 
        </div>
         
         </div>

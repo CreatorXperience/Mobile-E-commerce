@@ -4,7 +4,8 @@ import "../../src/style.css"
 import ProductCard from '../components/productCard'
 import Footer from '../components/footer'
 import axios from 'axios'
-interface forHomeProps {
+import HomeError from './HomeError'
+type forHomeProps = {
    drop: {
         "link": number,
         "product-image-link": string,
@@ -23,19 +24,31 @@ const Home = ()=> {
     const elementRef = createRef<HTMLInputElement>()
 
     let handleInitialFetch =  async (term:string) => {
-        let response = await axios.get(`http://localhost:3030/${term}`)
-        let responseData = response.data
-      
-    setInitialFetchState({drop: responseData})  
+        try {
+            let response = await axios.get(`http://localhost:3030/${term}`)
+            let responseData = response.data
+            setInitialFetchState({drop: responseData})  
+        }
+       
+      catch(e){
+let errorState =  [{
+    "link": 10,
+     "product-image-link": 'https://i.pinimg.com/564x/bd/6e/5c/bd6e5ce4130322f588640258fca7b03b.jpg',
+     "product-name": "error",
+     "product-amount": 0,
+     "product-reviews": 0,
+     "product-description": "Sorry Can't find what you search for try rephrasing the term"
+}]
+
+setInitialFetchState({drop: errorState})
+      }
 }
 
 useEffect(()=> {
-
     if(userInput === "popular"){
         handleInitialFetch(userInput)
        }
 },[userInput])
-
 
     useEffect(()=> {
         let EVLISTENER =  (e:MouseEvent)=> {
@@ -43,11 +56,7 @@ useEffect(()=> {
                     setInputState(true)
                 }
             }
-                
            document.body.addEventListener("click", EVLISTENER )
-
-           
-    
             return ()=> {
                     document.body.removeEventListener("click", EVLISTENER )
                         }
@@ -65,7 +74,6 @@ useEffect(()=> {
 //    FetchData(userInput)
     handleInitialFetch(userInput)
     }
-
     const handleInputChange =(event: React.ChangeEvent<HTMLInputElement>)=> {
         setUserInput(event.target.value.toLowerCase())
     }
@@ -75,15 +83,21 @@ setUserInput(item)
 }
     
 let ProductImage = initialFetchState.drop.map((datas)=> {
+if(initialFetchState.drop[0]['product-name'] === "error"){
+    return <HomeError key = {datas['product-name']} userInput = {userInput} content = {datas} />
+}
+else {
     return  <ProductCard key = {datas.link}content = {datas}/>
+}
+
   })
 
     return (
     <div>
         <form onSubmit={(e)=>handleFormSubmit(e)}>
-        <input ref = {elementRef} onChange={(e)=> handleInputChange(e)} id = "Jump" type='text' className={` w-[95%] mx-2 border-none outline-none shadow-md rounded-xl px-4 py-4 ${inputState === true ? "hidden" : ""   }   `} placeholder='Search'/>
+        <input ref = {elementRef} onChange={(e)=> handleInputChange(e)} id = "Jump" type='text' className={` w-[95%] mx-2 border-none md:translate-x-4 outline-none shadow-md rounded-xl px-4 py-4 ${inputState === true ? "hidden" : ""   }   `} placeholder='Search'/>
         </form>
-        <div className='container  w-[94%] flex justify-between mx-[10px] my-2'> 
+        <div className='container  w-[94%] md:translate-x-12 flex justify-between mx-[10px] my-2'> 
         <div onClick={(e)=> handleSearchIconClick(e)}> {Svg.search()}</div>
         <div>  
         <div className='font-light text-center'> Make home </div>
@@ -91,7 +105,7 @@ let ProductImage = initialFetchState.drop.map((datas)=> {
         </div>
         <div> {Svg.cart()}</div>
          </div>
-        <div className='mx-4 my-4'>
+        <div className='mx-4 my-4 md:translate-x-8'>
          <div className='container w-[100%] flex justify-around'> 
         <div> 
 
@@ -125,12 +139,12 @@ let ProductImage = initialFetchState.drop.map((datas)=> {
          </div>
          </div>
          
-         <div className='grid grid-cols-2 col-span-1 mt-8 gap-y-1'> 
+         <div className='grid grid-cols-2 col-span-1 mt-8 gap-y-1 '> 
          {ProductImage}
          </div> 
          
          <div className=''> 
-         <Footer />
+         <Footer page="home"/>
          </div>
         
          </div>

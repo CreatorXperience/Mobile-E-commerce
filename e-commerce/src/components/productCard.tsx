@@ -11,7 +11,7 @@ type forProductCardProps = {
 }
 const ProductCard = ({content}:forProductCardProps)=> {
     return (
-        <div className='w-30 rounded-md my-[-5px] mx-4 '> 
+        <div className='w-30 rounded-md my-[-12px] mx-4 '> 
             <div className='container w-30'> 
                 <img src={content['product-image-link']} className='w-30 rounded-2xl z-10' alt="hum"  />
               
@@ -19,7 +19,7 @@ const ProductCard = ({content}:forProductCardProps)=> {
 
             <div className='font-normal text-[14px] text-gray-500'> {content['product-name']}</div>
             <div>  $ <span className='font-bold text-[12px]'> {content['product-amount']} .00 </span></div>
-            <p className='z-20 translate-y-[-270%] translate-x-32'>{Svg.shoppingBag()} </p> 
+            <p className='z-20 translate-y-[-270%]  translate-x-24  md:translate-x-[90%]'>{Svg.shoppingBag()} </p> 
         </div>
     )
 }

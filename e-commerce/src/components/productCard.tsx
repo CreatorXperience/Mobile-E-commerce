@@ -19,7 +19,7 @@ const ProductCard = ({content}:forProductCardProps)=> {
 
             <div className='font-normal text-[14px] text-gray-500'> {content['product-name']}</div>
             <div>  $ <span className='font-bold text-[12px]'> {content['product-amount']} .00 </span></div>
-            <p className='z-20 translate-y-[-270%]  translate-x-24  md:translate-x-[90%]'>{Svg.shoppingBag()} </p> 
+            <p className='z-20 translate-y-[-270%]  translate-x-0  md:translate-x-[90%]'>{Svg.shoppingBag()} </p> 
         </div>
     )
 }

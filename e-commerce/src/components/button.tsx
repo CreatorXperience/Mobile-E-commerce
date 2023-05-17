@@ -4,10 +4,6 @@ type fortext = {
   className: string;
   content: string;
   disabled?: boolean;
-  // content?: string;
-  // padding: string;
-  // width: string;
-  // bgcolor?: string;
 };
 export const Button = ({ className, content, disabled }: fortext) => {
   return (

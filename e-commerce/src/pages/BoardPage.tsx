@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const Boarding = () => {
   return (
     <div className="h-[100%] relative">
-      <img src={boardingImg} alt="" className="h-[100%]" />
+      <img src={boardingImg} alt="" className="h-[100%] " />
       <article className="absolute top-[35%] z-20 ">
         <h2 className="text-[24px] text-[#606060] font-semibold leading-[30.47px] pl-3 ">
           MAKE YOUR{" "}
@@ -24,7 +24,7 @@ const Boarding = () => {
         </div>
       </article>
       <div className="absolute top-[78%] z-20 w-full flex justify-center text-center">
-        <Link to="login">
+        <Link to="signup">
           <Button
             className="bg-[#242424] text-white p-2 shadow-xl rounded w-[159px] h-[54px] text-[18px] font-[600] leading-[22.85px] font-serif"
             content="Get Started"

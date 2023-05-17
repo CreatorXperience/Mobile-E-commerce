@@ -1,11 +1,11 @@
-import React,{useState,createRef, useEffect} from 'react'
+import React,{useState,createRef,createContext, useEffect} from 'react'
 import Svg from '../components/icons/Svg'
 import "../../src/style.css"
 import ProductCard from '../components/productCard'
 import Footer from '../components/footer'
 import axios from 'axios'
 import HomeError from './HomeError'
-type forHomeProps = {
+type forHomeState = {
    drop: {
         "link": number,
         "product-image-link": string,
@@ -16,9 +16,14 @@ type forHomeProps = {
     }[] 
 }
 
+
 const Home = ()=> {
+
     const [inputState, setInputState]= useState(true)
-    const [initialFetchState, setInitialFetchState] = useState<forHomeProps>({drop: []})
+    const [initialFetchState, setInitialFetchState] = useState<forHomeState>({drop: []})
+
+ const Context = createContext({})
+
     const [userInput, setUserInput] = useState('popular')
     
     const elementRef = createRef<HTMLInputElement>()
@@ -49,6 +54,7 @@ useEffect(()=> {
         handleInitialFetch(userInput)
        }
 },[userInput])
+
 
     useEffect(()=> {
         let EVLISTENER =  (e:MouseEvent)=> {
@@ -144,11 +150,14 @@ else {
          </div> 
          
          <div className=''> 
+         <Context.Provider value={initialFetchState}> 
          <Footer page="home"/>
+
+         </Context.Provider> 
          </div>
         
          </div>
     )
 }
 
-export default Home
+export default React.memo(Home)

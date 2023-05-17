@@ -3,12 +3,14 @@
 @tailwind utilities;
 
 .switch {
+
   width: 60px;
   height: 30px;
   background-color: rgb(206, 210, 209);
   border-radius: 30px;
   display: inline-block;
   position: relative;
+   
 }
 
 .switch:before {
@@ -32,3 +34,4 @@
 .inp {
   display: none;
 }
+

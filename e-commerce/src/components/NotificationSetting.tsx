@@ -1,3 +1,4 @@
+
 import React from 'react'
 import '../../src/style.css'
 
@@ -15,7 +16,8 @@ return (
             <label htmlFor='toggle'className='switch'> </label>
 
             </div>
+
     </div>
-)
-}
-export default NotificationSetting
+  );
+};
+export default NotificationSetting;

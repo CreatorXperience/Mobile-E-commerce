@@ -1,5 +1,5 @@
-import React, { ReactElement } from 'react'
-import "../../style.css"
+import React, { ReactElement } from "react";
+import "../../style.css";
 
 type forSvg = {
   close(): ReactElement;
@@ -25,7 +25,8 @@ type forSvg = {
   darkbag(): ReactElement;
   favorite(): ReactElement;
   dropdown2(): ReactElement;
-  sofa(): ReactElement;
+ eye(): ReactElement;
+sofa(): ReactElement;
   bed(): ReactElement;
   wardrobe(): ReactElement;
   star(): ReactElement
@@ -262,6 +263,7 @@ const Svg:forSvg = {
       </svg>
     );
   },
+
      cart(){
         return(
             <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -301,8 +303,8 @@ const Svg:forSvg = {
       );
     },
 visible(){
-    return (
 
+    return (
       <svg
         width="24"
         height="24"
@@ -320,6 +322,7 @@ visible(){
       </svg>
     );
   },
+
  
   time() {
        return ( <svg width="20" height="20"  viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -340,8 +343,8 @@ forward(){
 },
 
 dropdown(){
-    return (
 
+    return (
       <svg
         width="60"
         height="60"
@@ -469,4 +472,6 @@ star(){
 
 
 export default Svg
+
+
 

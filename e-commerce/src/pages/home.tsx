@@ -5,6 +5,8 @@ import ProductCard from '../components/productCard'
 import Footer from '../components/footer'
 import axios from 'axios'
 import HomeError from './HomeError'
+import { Link} from 'react-router-dom'
+
 type forHomeState = {
    drop: {
         "link": number,
@@ -15,14 +17,22 @@ type forHomeState = {
         "product-description": string
     }[] 
 }
+type forContext = {
+   drop: {
+    "link": number,
+    "product-image-link": string,
+    "product-name": string,
+    "product-amount": number,
+    "product-reviews": number,
+    "product-description": string
+    }
+}
 
 
 const Home = ()=> {
 
     const [inputState, setInputState]= useState(true)
     const [initialFetchState, setInitialFetchState] = useState<forHomeState>({drop: []})
-
- const Context = createContext({})
 
     const [userInput, setUserInput] = useState('popular')
     
@@ -93,7 +103,12 @@ if(initialFetchState.drop[0]['product-name'] === "error"){
     return <HomeError key = {datas['product-name']} userInput = {userInput} content = {datas} />
 }
 else {
-    return  <ProductCard key = {datas.link}content = {datas}/>
+    return  <Link to = {`/product`} state={datas} key={datas.link}> 
+  
+    <ProductCard key = {datas.link} content = {datas}/>  
+
+  
+    </Link>
 }
 
   })
@@ -150,10 +165,7 @@ else {
          </div> 
          
          <div className=''> 
-         <Context.Provider value={initialFetchState}> 
          <Footer page="home"/>
-
-         </Context.Provider> 
          </div>
         
          </div>

@@ -28,23 +28,19 @@ export const ContextProvider = ({ children }: ContextProps) => {
 
   const HandleChangeName = function (e: React.ChangeEvent<HTMLInputElement>) {
     let value = e.target.value;
-    console.log(value);
-
     setName(value);
   };
   const HandleChangeConfirmPassWord = function (
     e: React.ChangeEvent<HTMLInputElement>
   ) {
     let value = e.target.value;
-    console.log(value);
+
 
     setconfirmPassword(value);
   };
 
   const HandleChangeEmail = function (e: React.ChangeEvent<HTMLInputElement>) {
     let value = e.target.value;
-    console.log(value);
-
     setEmail(value);
     if (!validEmail.test(value)) {
       setEmailError(true);
@@ -85,12 +81,11 @@ export const ContextProvider = ({ children }: ContextProps) => {
         userInfo.password === "" &&
         userInfo.name === ""
       ) {
-        console.log("empty");
+
       } else {
         newUser.push(userInfo);
       }
-      console.log(newUser);
-
+  
       return newUser;
     });
   };

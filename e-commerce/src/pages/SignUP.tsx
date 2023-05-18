@@ -3,7 +3,7 @@ import wlcImg from "../assets/wlc.png";
 import { Button } from "../components/button";
 import {Link} from 'react-router-dom'
 import Svg from "../components/icons/Svg";
-import { AiOutlineEyeInvisible } from "react-icons/ai";
+import { AiFillAccountBook, AiOutlineEyeInvisible } from "react-icons/ai";
 
 import { Context } from "../context/index";
 import {
@@ -12,6 +12,7 @@ import {
   UserProps,
   ContextProps,
 } from "../type";
+import { AiOutlineAim } from "react-icons/ai";
 const SignUp = () => {
   const {
     toggleIcon,
@@ -93,14 +94,14 @@ const SignUp = () => {
           required/>
           {passwordError && (
             <span className="absolute top-[65px] text-[10px]  tracking-wider leading-4 font-semibold text-red-500 mb-3">
-              password must contain at least an uppercase and a symbol
+              password must contain at least a sybmol
             </span>
           )}
           <span
             onClick={handleTogglePassword}
             className="absolute  top-[29px] right-[30px]"
           >
-            {toggleIcon ? <AiOutlineEyeInvisible /> : Svg.eye()}
+            {toggleIcon ? <AiOutlineEyeInvisible /> : <AiOutlineAim/>}
           </span>
         </div>
         <div className="flex flex-col mt-4  mb-3 relative">

@@ -106,7 +106,7 @@ const Login = () => {
         </h3>
 
         <div>
-          <Link to="/home">
+          <Link to={email !== '' && password !== ''? "/home": ''}>
             <div
               className="flex justify-center m-5 p-4 w-[289px]"
               onClick={() => checkIfEmailAndPassword(email, password)}
@@ -114,8 +114,9 @@ const Login = () => {
               <Button
                 className="bg-[#242424] text-white p-2 shadow-2xl rounded w-full h-[50px] text-[18px] font-[600] leading-[22.85px] font-serif"
                 content="Login"
+
                 disabled={
-                  emailExist === true || passwordExist === true ? true : false
+                  emailExist === true && passwordExist === true ? true : false
                 }
               />
             </div>

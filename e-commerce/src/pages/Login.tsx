@@ -42,7 +42,7 @@ const Login = () => {
   };
 
   return (
-    <div className="h-full ">
+    <div className="h-full  ">
       <header className="flex justify-around items-center  p-5 h-[28%]">
         <div className="w-[105px] h-[1px] bg-[#BDBDBD]"></div>
         <img src={wlcImg} alt="logo" className="text-[#303030]" />
@@ -58,19 +58,19 @@ const Login = () => {
       </div>
       <form
         action=""
-        className="mt-5  w-[345px] h-[437px] pl-5 bg-[#FFFF] shadow-2xl"
+        className="mt-5 ml-5 w-[90%] h-[437px] py-1 pl-5 bg-[#FFFF] shadow-2xl"
       >
         <div className="flex flex-col mt-5 mb-5 relative">
-          <label htmlFor="email" className="pb-5  text-[#909090]">
+          <label htmlFor="email" className="pb-2  text-[#909090]">
             Email
           </label>
           <input
-            type="text"
+            type="email"
             name="email"
             value={email}
-            className="border-b-2 outline-none"
+            className="border-b-2 w-100 outline-none"
             onChange={HandleChangeEmail}
-          />
+           required/>
           {emailExist && (
             <span className="absolute top-[75px] text-[10px] tracking-wider leading-4 font-semibold text-red-500 mb-3">
               incorrect email address
@@ -78,7 +78,7 @@ const Login = () => {
           )}
         </div>
         <div className="flex flex-col mt-6  mb-5 relative">
-          <label htmlFor="password" className="pb-5  text-[#909090]">
+          <label htmlFor="password" className="pb-2  text-[#909090]">
             Password
           </label>
           <input
@@ -88,7 +88,7 @@ const Login = () => {
             className="border-b-2 outline-none text-[20px] bg-white
             "
             onChange={HandleChangePassword}
-          />
+          required/>
           {/* {passwordExist && (
             <span className="absolute top-[75px] text-[10px]  tracking-wider leading-4 font-semibold text-red-500 mb-3">
               incorrect password

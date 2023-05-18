@@ -48,14 +48,15 @@ export const ContextProvider = ({ children }: ContextProps) => {
     setEmail(value);
     if (!validEmail.test(value)) {
       setEmailError(true);
+   return false
+    
     } else {
       setEmailError(false);
+      return true
     }
   };
 
-  const HandleChangePassword = function (
-    e: React.ChangeEvent<HTMLInputElement>
-  ) {
+  const HandleChangePassword = function (e: React.ChangeEvent<HTMLInputElement>) {
     let value = e.target.value;
 
     setPassword(value);

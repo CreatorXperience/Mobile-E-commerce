@@ -1,7 +1,7 @@
 import React from "react";
 import wlcImg from "../assets/wlc.png";
 import { Button } from "../components/button";
-import { Link } from "react-router-dom";
+import {Link} from 'react-router-dom'
 import Svg from "../components/icons/Svg";
 import { AiOutlineEyeInvisible } from "react-icons/ai";
 
@@ -48,10 +48,10 @@ const SignUp = () => {
       </div>
       <form
         action=""
-        className="mt-5  w-[345px] h-[550px] pl-5 bg-[#FFFF] shadow-2xl"
+        className="mt-5  w-[90%] ml-5 h-[550px] py-4 pl-5 bg-[#FFFF] shadow-2xl"
       >
         <div className="flex flex-col mt-4 mb-3 relative">
-          <label htmlFor="name" className="pb-3  text-[#909090]">
+          <label htmlFor="name" className="pb-1  text-[#909090]">
             Name
           </label>
           <input
@@ -60,19 +60,19 @@ const SignUp = () => {
             value={name}
             className="border-b-2 outline-none"
             onChange={HandleChangeName}
-          />
+         required />
         </div>
         <div className="flex flex-col mt-4  mb-3 relative">
-          <label htmlFor="email" className="pb-3  text-[#909090]">
+          <label htmlFor="email" className="pb-1  text-[#909090]">
             Email
           </label>
           <input
-            type="text"
+            type="email"
             name="email"
             value={email}
             className="border-b-2 outline-none"
             onChange={HandleChangeEmail}
-          />
+         required />
           {emailError && (
             <span className="absolute top-[65px] text-[10px] tracking-wider leading-4 font-semibold text-red-500 mb-3">
               a valid email is required
@@ -80,7 +80,7 @@ const SignUp = () => {
           )}
         </div>
         <div className="flex flex-col mt-4  mb-3 relative">
-          <label htmlFor="password" className="pb-3  text-[#909090]">
+          <label htmlFor="password" className="pb-1  text-[#909090]">
             Password
           </label>
           <input
@@ -90,10 +90,10 @@ const SignUp = () => {
             className="border-b-2 outline-none text-[20px] bg-white
             "
             onChange={HandleChangePassword}
-          />
+          required/>
           {passwordError && (
             <span className="absolute top-[65px] text-[10px]  tracking-wider leading-4 font-semibold text-red-500 mb-3">
-              password must contain upperCase,lowerCase and symbol
+              password must contain at least an uppercase and a symbol
             </span>
           )}
           <span
@@ -104,7 +104,7 @@ const SignUp = () => {
           </span>
         </div>
         <div className="flex flex-col mt-4  mb-3 relative">
-          <label htmlFor="confirmPassword" className="pb-3 text-[#909090]">
+          <label htmlFor="confirmPassword" className="pb-1 text-[#909090]">
             confirm Password
           </label>
           <input
@@ -114,7 +114,7 @@ const SignUp = () => {
             className="border-b-2 outline-none text-[20px] bg-white
             "
             onChange={HandleChangeConfirmPassWord}
-          />
+         required />
           {password !== confirmPassword && (
             <span className="absolute top-[65px] text-[10px]  tracking-wider leading-4 font-semibold text-red-500 mb-3">
               both must be match!
@@ -124,20 +124,17 @@ const SignUp = () => {
             onClick={handleTogglePassword}
             className="absolute  top-[29px] right-[30px]"
           >
-            {toggleIcon ? <AiOutlineEyeInvisible /> : Svg.eye()}
+            {toggleIcon ? Svg.eye(): ''}
           </span>
         </div>
 
         <div>
           <Link
-            to={email === "" || password === "" || name === " " ? "" : "/home"}
+            to={email !== '' && password !=='' && name !== '' && confirmPassword !== '' ? "/home" : '' }
             onClick={() => handleGetUserInfo(name, password, email)}
           >
             <div className="flex justify-center m-3 p-4 w-[289px]">
-              <Button
-                className="bg-[#242424] text-white p-2 shadow-2xl rounded w-full h-[50px] text-[18px] font-[600] leading-[22.85px] font-serif"
-                content="SIGN UP"
-              />
+              <input type="submit"  className="bg-[#242424] text-white p-2 shadow-2xl rounded w-full h-[50px] text-[18px] font-[600] leading-[22.85px] font-serif" value="SIGN UP"  />
             </div>
           </Link>
         </div>

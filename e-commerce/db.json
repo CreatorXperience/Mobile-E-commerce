@@ -1,5 +1,6 @@
 {
   "bed": [{
+            "category":  "bed",
              "link": 1,
               "product-image-link": "https://i.pinimg.com/564x/2f/4b/d9/2f4bd93e6785c4ffe4223917e8cb5d23.jpg",
               "product-name": "Double Bed",
@@ -7,6 +8,7 @@
               "product-reviews": 40,
               "product-description": "Double Bed Design does have a high influence of classic to modern tone, it even comes with storage and different style of headboards. Depending on the theme of the bedroom the bed could vary from cantilever to mid-century"
           }, {
+            "category":  "bed",
             "link": 2,
             "product-image-link": "https://i.pinimg.com/564x/88/ba/2d/88ba2dd9c6bad98394a77cb9e1725882.jpg",
             "product-name": "Wooden Cream Bed",
@@ -14,6 +16,7 @@
             "product-reviews": 50,
             "product-description": "Wooden creamy colored bed is a classic and elegant piece of furniture that adds warmth and sophistication to any bedroom. The creamy color of the wood creates a soft and inviting atmosphere, while the wooden construction ensures durability and longevity"
         },  {
+            "category":  "bed",
             "link": 3,
             "product-image-link": "https://i.pinimg.com/564x/8c/f3/d0/8cf3d081afc555e601fcad27962e14e9.jpg",
             "product-name": "Simple Bed",
@@ -21,6 +24,7 @@
             "product-reviews": 50,
             "product-description": "Upgrade your sleep game with this cutting-edge smart bed,Sleep peacefully in this beautifully designed upholstered bed."
         },{
+            "category":  "bed",
             "link": 4,
             "product-image-link": "https://i.pinimg.com/564x/d7/aa/db/d7aadbc166d6f59d9bc95c6551eb197b.jpg",
             "product-name": "Soft Bed",
@@ -28,6 +32,7 @@
             "product-reviews": 40,
             "product-description": "Add a touch of rustic charm to your bedroom with this stunning reclaimed wood bed frame and Create a cozy and inviting atmosphere with this comfortable and stylish upholstered bed."
     },{
+        "category":  "bed",
         "link": 5,
         "product-image-link": "https://i.pinimg.com/564x/18/c4/d7/18c4d78ca8c7778c66b813953ef11862.jpg",
         "product-name": "Storage Bed",
@@ -35,6 +40,7 @@
         "product-reviews": 10,
         "product-description": "It features built-in storage compartments underneath the mattress, usually in the form of drawers or shelves, that provide ample storage space for clothing, bedding, or other items. This type of bed is ideal for smaller bedrooms or for those who want to declutter their living space. It is also a great solution for those who want to create a more organized and efficient sleeping environment."
     },{
+        "category":  "bed",
         "link": 6,
         "product-image-link": "https://i.pinimg.com/564x/5c/d1/9b/5cd19b79df986054b1c769d1eb276ee0.jpg",
         "product-name": "Upholstered Bed ",
@@ -42,6 +48,7 @@
         "product-reviews": 80,
         "product-description": "This type of bed offers a luxurious and elegant look while being soft and durable at the same time"
     },{
+        "category":  "bed",
         "link": 7,
         "product-image-link": "https://i.pinimg.com/564x/4d/34/2e/4d342e46b40860fbf13caa13118c799e.jpg",
         "product-name": "Luxury Bed",
@@ -49,6 +56,7 @@
         "product-reviews": 10,
         "product-description": "This type of bed offers a luxurious and elegant look while being soft and durable at the same time"
     }, {
+        "category":  "bed",
         "link": 8,
         "product-image-link": "https://i.pinimg.com/564x/1e/a6/1b/1ea61b84b820469130d7d6c47bb62d6d.jpg",
         "product-name": " Luxury modern Bed",
@@ -58,6 +66,7 @@
     }],
 
     "sofa": [{
+        "category":  "sofa",
         "link": 9,
         "product-image-link": "https://i.pinimg.com/564x/b6/88/8f/b6888f59eee088d3edd33ae83b598470.jpg",
         "product-name": "Luna sofa",
@@ -65,6 +74,7 @@
         "product-reviews": 40,
         "product-description": "sofa living room aesthetic carving Sofa design ideas for Home decor design ideas for decoratin themes"
     },{
+        "category":  "sofa",
         "link": 10,
         "product-image-link": "https://i.pinimg.com/564x/c4/2c/ec/c42cec9f3ab23a4cbde293a19231b5b4.jpg",
         "product-name":"Jasper Sofa",
@@ -72,6 +82,7 @@
         "product-reviews": 50,
         "product-description": "Gray colored combined sofa is a versatile and functional piece of furniture that is perfect for any living room. It typically combines different seating configurations, such as a chaise, loveseat, or recliner, into a single unit, providing a variety of seating options for you and your guests."
     },{
+        "category":  "sofa",
         "link": 11,
         "product-image-link": "https://i.pinimg.com/564x/99/3a/c3/993ac33a11fa8cd8a3c90aadfa6aa4d1.jpg",
         "product-name": "Haven Sofa",
@@ -79,6 +90,7 @@
         "product-amount": 50,
         "product-description": "An essential element of any living room or lounge area, providing a comfortable and inviting place to relax, entertain, or socialize with friends and family"
     },{
+        "category":  "sofa",
         "link": 12,
         "product-image-link":"https://i.pinimg.com/564x/ea/2c/02/ea2c02182e26f73c460239d667099488.jpg",
         "product-name": "Siena Sofa",
@@ -87,6 +99,7 @@
         "product-description": "Features different types of cushions, such as foam, down, or a combination of materials, to provide a comfortable and supportive seating experience."
     },
     {
+        "category":  "sofa",
         "link": 13,
         "product-image-link":"https://i.pinimg.com/564x/e9/a5/4c/e9a54c68b2c8a3d681689839d675bc0c.jpg",
         "product-name": "convertible sofa",
@@ -95,6 +108,7 @@
         "product-description": "This type of sofa is ideal for those who have limited space in their homes or who want to maximize their living space. It is also a great solution for those who frequently host guests or who have overnight visitors"
     },
     {
+        "category":  "sofa",
         "link": 14,
         "product-image-link": "https://i.pinimg.com/564x/6d/36/2d/6d362d119ae35ed2592ab688263e8a4a.jpg",
         "product-name": "Belize Sofa Bed",
@@ -106,6 +120,7 @@
 
     "wardrobe": [
         {
+            "category":  "wardrobe",
             "link": 15,
             "product-image-link": "https://i.pinimg.com/564x/46/77/ad/4677ade83e500308cbfcf3ddfcb1c0b2.jpg",
             "product-name": "Brown storage set",
@@ -114,6 +129,7 @@
             "product-description": "A black storage set wardrobe is a functional and stylish storage solution that provides ample space to store your clothes, accessories, and other personal belongings. It typically features multiple shelves, hanging rods, and drawers, providing a variety of storage options"
         },
         {
+            "category":  "wardrobe",
             "link": 16,
             "product-image-link": "https://i.pinimg.com/564x/5c/ee/00/5cee002fec86da3dc4c4a6ac505a6d11.jpg",
             "product-name": "Bed",
@@ -122,6 +138,7 @@
             "product-description": "It typically features three sections or compartments, each with a combination of hanging rods, shelves, and drawers. The white color gives it a clean and fresh look that complements any interior design style and color scheme."
         },
         {
+            "category":  "wardrobe",
             "link": 17,
             "product-image-link": "https://i.pinimg.com/564x/43/80/70/438070ec9306a271676040e235b88102.jpg",
             "product-name": "wardrobe",
@@ -129,6 +146,7 @@
             "product-reviews": 40,
             "product-description": " A milky color sofa is typically upholstered in high-quality fabric, leather, or a combination of materials, providing both comfort and durability"
         },{
+            "category":  "wardrobe",
             "link": 18,
             "product-image-link": "https://i.pinimg.com/564x/46/77/ad/4677ade83e500308cbfcf3ddfcb1c0b2.jpg",
             "product-name": "Brown Set",
@@ -136,6 +154,7 @@
             "product-reviews": 50,
             "product-description": "This type of wardrobe typically features a sleek and modern design, with clean lines and a minimalist aesthetic that creates a sense of sophistication and elegance. It is often available in a range of colors and finishes, allowing you to choose the one that best complements your bedroom decor."
         },{
+            "category":  "wardrobe",
             "link": 19,
             "product-image-link": "https://i.pinimg.com/564x/e5/13/20/e51320705f6c0c32ee0577e5266c256d.jpg",
             "product-name": "White wardrobe",
@@ -144,6 +163,7 @@
             "product-description": "It is designed to fit perfectly in your space and to accommodate your unique storage requirements, such as the number of hanging rods, shelves, drawers, and other storage options. With a customized wardrobe, you can choose the style, finish, and color that best suits your personal taste and bedroom decor"
         },
         {
+            "category":  "wardrobe",
             "link": 20,
             "product-image-link": "https://i.pinimg.com/564x/5c/ee/00/5cee002fec86da3dc4c4a6ac505a6d11.jpg",
             "product-name": " Space wardrobe",
@@ -156,6 +176,7 @@
 
     "popular": [
         {
+            "category":  "popular",
             "link": 21,
             "product-image-link": "https://i.pinimg.com/564x/72/35/28/723528ba392f5008bbdf18600b7c5df0.jpg",
             "product-name": "Nice Milky Bed",
@@ -165,6 +186,7 @@
         },
 
         {
+            "category":  "popular",
             "link": 22,
             "product-image-link": "https://i.pinimg.com/564x/6c/b3/83/6cb3831bda1df95c26ff72301514d387.jpg",
             "product-name": " Milky Wardrobe",
@@ -173,6 +195,7 @@
             "product-description": "Brown glass wardrobes are available in a variety of styles, from modern and minimalist designs to more traditional or ornate styles. They can be made from a range of materials, such as wood, metal, or plastic, and may feature additional elements such as shelves, drawers, or hanging rods to provide storage space for clothing and accessories."
         },
         {
+            "category":  "popular",
             "link": 23,
             "product-image-link": "https://i.pinimg.com/564x/d5/c8/36/d5c836765e30cbe4cd805982bc97f1ac.jpg",
             "product-name": "Fluted sofa",
@@ -181,6 +204,7 @@
             "product-description": "Velvet sofas are available in a range of styles, colors, and sizes to suit different tastes and preferences. They can feature various design elements such as tufting, nailhead trim, and decorative cushions to enhance their appearance. Velvet sofas can also be found in different shapes, such as curved or modular designs, to fit a variety of living spaces"
         },
         {
+            "category":  "popular",
             "link": 24,
             "product-image-link": "https://i.pinimg.com/564x/a6/cc/e4/a6cce473ee84d8fd7ed9d5af9a51f463.jpg",
             "product-name": "Mighty wood sofa",
@@ -190,6 +214,7 @@
         },
 
         {
+            "category":  "popular",
             "link": 16,
             "product-image-link": "https://i.pinimg.com/564x/5c/ee/00/5cee002fec86da3dc4c4a6ac505a6d11.jpg",
             "product-name": "Bed",
@@ -198,6 +223,7 @@
             "product-description": "It typically features three sections or compartments, each with a combination of hanging rods, shelves, and drawers. The white color gives it a clean and fresh look that complements any interior design style and color scheme."
         },
         {
+            "category":  "popular",
             "link": 7,
             "product-image-link": "https://i.pinimg.com/564x/4d/34/2e/4d342e46b40860fbf13caa13118c799e.jpg",
             "product-name": "Luxury Bed",
@@ -206,6 +232,7 @@
             "product-description": "This type of bed offers a luxurious and elegant look while being soft and durable at the same time"
         },
         {
+            "category":  "popular",
             "link": 8,
             "product-image-link": "https://i.pinimg.com/564x/1e/a6/1b/1ea61b84b820469130d7d6c47bb62d6d.jpg",
             "product-name": " Luxury modern Bed",
@@ -214,6 +241,7 @@
             "product-description": " The bed is upholstered with high-quality leather, which gives it a luxurious and high-end appearance. This type of bed is often available in a range of colors, allowing you to choose the one that best complements your bedroom decor"
         },
         {
+            "category":  "popular",
             "link": 3,
             "product-image-link": "https://i.pinimg.com/564x/6c/b3/83/6cb3831bda1df95c26ff72301514d387.jpg",
             "product-name": "Simple Bed",
@@ -222,6 +250,7 @@
             "product-description": "Upgrade your sleep game with this cutting-edge smart bed,Sleep peacefully in this beautifully designed upholstered bed."
         },
         {
+            "category":  "popular",
             "link": 17,
             "product-image-link": "https://i.pinimg.com/564x/43/80/70/438070ec9306a271676040e235b88102.jpg",
             "product-name": " White wardrobe",
@@ -230,6 +259,7 @@
             "product-description": " A milky color sofa is typically upholstered in high-quality fabric, leather, or a combination of materials, providing both comfort and durability"
         },
         {
+            "category":  "popular",
             "link": 11,
             "product-image-link": "https://i.pinimg.com/564x/99/3a/c3/993ac33a11fa8cd8a3c90aadfa6aa4d1.jpg",
             "product-name": "Haven Sofa",

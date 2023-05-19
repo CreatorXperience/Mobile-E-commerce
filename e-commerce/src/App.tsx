@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Boarding from "./pages/BoardPage";
 import { Route, Routes } from "react-router-dom";
 import Login from "./pages/Login";
@@ -8,6 +8,9 @@ import "../src/style.css";
 import ProductPage from "./pages/ProductPage";
 
 const App = () => {
+
+
+
   return (
 
     <div className="App h-[100vh]">
@@ -16,7 +19,7 @@ const App = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/home" element={<Home />} />
-        <Route path="/product" element={<ProductPage />} /> 
+        <Route path="/product/:term/:id" element={<ProductPage  />} /> 
       </Routes>
 
        

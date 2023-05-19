@@ -29,3 +29,28 @@ export type StoreUserProps = {
 export type ContextProps = {
   children: React.ReactNode;
 };
+
+export type forHomeState = {
+  drop: {
+     "category":  string;
+       "link": number,
+       "product-image-link": string,
+       "product-name": string,
+       "product-amount": number,
+       "product-reviews": number,
+       "product-description": string
+   }[] 
+}
+
+
+export type forHomeErrorProps = {
+  userInput: string
+  content: {
+      "link": number,
+      "product-image-link": string,
+      "product-name": string,
+      "product-amount": number,
+      "product-reviews": number,
+      "product-description": string
+  } 
+  }

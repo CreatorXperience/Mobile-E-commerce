@@ -5,7 +5,7 @@ type fortext = {
   content: string;
   disabled?: boolean;
 };
-export const Button = ({ className, content, disabled }: fortext) => {
+export const Button = ({className,content, disabled }: fortext) => {
   return (
     <button className={className} disabled={disabled}>
       {content}

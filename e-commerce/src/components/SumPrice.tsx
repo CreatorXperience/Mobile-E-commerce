@@ -2,25 +2,25 @@ import { useState, useMemo } from "react";
 
 type SumProps = {
   quantity: number;
-  setQuantity: React.Dispatch<React.SetStateAction<number>>;
 };
 
-const SumPrice = ({ quantity, setQuantity }: SumProps) => {
+const SumPrice = ({ quantity}: SumProps) => {
+  let [newQuantity, setNewQuantity] = useState(quantity)
   // just for testing
   return (
-    <div>
-      {/* <span>{}</span> */}
+    <div className="mx-4">
+
       <div>
         <button
-          className="border-2  m-2 h-auto p-[2px] w-[29px] rounded"
-          onClick={() => setQuantity((prev) => (prev === 1 ? 1 : prev - 1))}
+          className="border-2 bg-gray-300 font-semibold m-2 h-auto p-[2px]  w-[30px] rounded"
+          onClick={() => setNewQuantity( newQuantity === 0 ? 0 :newQuantity-1)}
         >
           -
         </button>
-        <span>{quantity}</span>
+        <span>{newQuantity}</span>
         <button
-          className="border-2  m-2 h-auto p-[2px] w-[29px] rounded"
-          onClick={() => setQuantity((prev) => prev + 1)}
+          className="border-2 bg-gray-300 font-semibold m-2 h-auto p-[2px] w-[30px] rounded"
+          onClick={() => setNewQuantity(newQuantity+1)}
         >
           +
         </button>

@@ -1,16 +1,6 @@
 import React from 'react'
+import { forHomeErrorProps } from '../type'
 
-type forHomeErrorProps = {
-userInput: string
-content: {
-    "link": number,
-    "product-image-link": string,
-    "product-name": string,
-    "product-amount": number,
-    "product-reviews": number,
-    "product-description": string
-} 
-}
 const HomeError = ({content,userInput}: forHomeErrorProps)=> {
     return (
         <div className='translate-x-[55%] w-100'>

@@ -1,4 +1,4 @@
-import React,{useState,createRef,createContext, useEffect} from 'react'
+import React,{useState,createRef, useEffect} from 'react'
 import Svg from '../components/icons/Svg'
 import "../../src/style.css"
 import ProductCard from '../components/productCard'
@@ -6,47 +6,25 @@ import Footer from '../components/footer'
 import axios from 'axios'
 import HomeError from './HomeError'
 import { Link} from 'react-router-dom'
-
-type forHomeState = {
-   drop: {
-        "link": number,
-        "product-image-link": string,
-        "product-name": string,
-        "product-amount": number,
-        "product-reviews": number,
-        "product-description": string
-    }[] 
-}
-type forContext = {
-   drop: {
-    "link": number,
-    "product-image-link": string,
-    "product-name": string,
-    "product-amount": number,
-    "product-reviews": number,
-    "product-description": string
-    }
-}
+import { forHomeState } from '../type'
 
 
 const Home = ()=> {
-
     const [inputState, setInputState]= useState(true)
-    const [initialFetchState, setInitialFetchState] = useState<forHomeState>({drop: []})
-
+    const [initialFetchState, setFetchState] = useState<forHomeState>({drop: []})
     const [userInput, setUserInput] = useState('popular')
-    
     const elementRef = createRef<HTMLInputElement>()
 
-    let handleInitialFetch =  async (term:string) => {
+
+    let handleFetch =  async (term:string) => {
         try {
             let response = await axios.get(`http://localhost:3030/${term}`)
             let responseData = response.data
-            setInitialFetchState({drop: responseData})  
+            setFetchState({drop: responseData})  
         }
-       
       catch(e){
 let errorState =  [{
+    "category":  "popular",
     "link": 10,
      "product-image-link": 'https://i.pinimg.com/564x/bd/6e/5c/bd6e5ce4130322f588640258fca7b03b.jpg',
      "product-name": "error",
@@ -54,14 +32,13 @@ let errorState =  [{
      "product-reviews": 0,
      "product-description": "Sorry Can't find what you search for try rephrasing the term"
 }]
-
-setInitialFetchState({drop: errorState})
+setFetchState({drop: errorState})
       }
 }
 
 useEffect(()=> {
     if(userInput === "popular"){
-        handleInitialFetch(userInput)
+          setTimeout(()=> handleFetch(userInput),500)
        }
 },[userInput])
 
@@ -85,29 +62,32 @@ useEffect(()=> {
        setInputState(!inputState) 
        console.log('from handle click' + inputState)
     }
+
     const handleFormSubmit =(event: React.FormEvent<HTMLFormElement>)=> {
     event.preventDefault()
-//    FetchData(userInput)
-    handleInitialFetch(userInput)
+    setTimeout(()=> handleFetch(userInput),500)
     }
+
     const handleInputChange =(event: React.ChangeEvent<HTMLInputElement>)=> {
         setUserInput(event.target.value.toLowerCase())
     }
+
     const handleItemClick = (e: React.MouseEvent<HTMLDivElement>,item:string)=> {
-setUserInput(item)
-   handleInitialFetch(item)
+        setUserInput(item)
+   handleFetch(item)
 }
-    
-let ProductImage = initialFetchState.drop.map((datas)=> {
-if(initialFetchState.drop[0]['product-name'] === "error"){
+
+
+
+let {drop} = initialFetchState
+let ProductImage = drop.map((datas)=> {
+if(drop[0]['product-name'] === "error"){
     return <HomeError key = {datas['product-name']} userInput = {userInput} content = {datas} />
 }
-else {
-    return  <Link to = {`/product`} state={datas} key={datas.link}> 
-  
-    <ProductCard key = {datas.link} content = {datas}/>  
 
-  
+else {
+    return  <Link to = {`/product/${datas.category}/${datas.link}`}  key={datas.link} > 
+    <ProductCard key = {datas.link} content = {datas}/>  
     </Link>
 }
 

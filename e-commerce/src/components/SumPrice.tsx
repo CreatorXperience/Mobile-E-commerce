@@ -1,12 +1,17 @@
-import { useState, useMemo } from "react";
+import { useState,useEffect} from "react";
 
 type SumProps = {
   quantity: number;
+  getQuantity: (quant: number)=> void
 };
 
-const SumPrice = ({ quantity}: SumProps) => {
+
+const SumPrice = ({quantity,getQuantity}: SumProps) => {
   let [newQuantity, setNewQuantity] = useState(quantity)
   // just for testing
+useEffect(()=> {
+getQuantity(newQuantity)
+},[newQuantity,getQuantity])
   return (
     <div className="mx-4">
 

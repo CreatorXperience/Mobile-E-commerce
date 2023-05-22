@@ -1,27 +1,16 @@
 
 import React, { useEffect,useState } from 'react'
-import { Link, useLocation,useParams } from 'react-router-dom'
+import { Link,useParams } from 'react-router-dom'
 import axios from 'axios'
 import Svg from '../components/icons/Svg'
 import SumPrice from '../components/SumPrice'
-import { Button } from '../components/button'
+import { forProductState } from '../type'
 
 
-type forProductState = {
-    data: {
-        "category":  string;
-        "link": number,
-        "product-image-link": string,
-        "product-name": string,
-        "product-amount": number,
-        "product-reviews": number,
-        "product-description": string
-    }
-}
 const ProductPage = ()=> {
 
  let {id,term} = useParams()
-let [ProductState, setProductState] = useState<forProductState>({data: {
+const [ProductState, setProductState] = useState<forProductState>({data: {
         "category": '',
         "link": 0,
         "product-image-link": "",
@@ -30,14 +19,23 @@ let [ProductState, setProductState] = useState<forProductState>({data: {
         "product-reviews": 0,
         "product-description": ""
 }})
+const [quantity,setQuantity]= useState(0)
 
 
+
+
+
+
+const getQuantity = (newQuantity:number)=> {
+    setQuantity(newQuantity)
+}
  useEffect(()=> {
     const handleImmediateFetch = async (term:string, id:string)=> {
         let response = await axios.get(`http://localhost:3030/${term}/${id}`)
         setProductState({data: response.data})
     }
     handleImmediateFetch(term as string, id as string)
+   
  },[term,id])
  
 useEffect(()=> {
@@ -51,6 +49,7 @@ useEffect(()=> {
 
 useEffect(()=> {
     let setItem = localStorage.setItem('product', JSON.stringify(ProductState))
+    console.log(setItem)
 })
 
 
@@ -71,12 +70,12 @@ useEffect(()=> {
                 <div className=' px-4 text-2xl font-semibold'>{ProductState.data['product-name']}</div>  
                 <div className='flex justify-between'>
                     <div className='px-4 text-3xl font-bold my-2'> <span>  $ </span> {ProductState.data['product-amount']} </div> 
-                    <SumPrice quantity={0} /> 
+                    <SumPrice quantity={quantity} getQuantity={getQuantity}/> 
                     </div>
                 <div className='px-4 text-[15px] w-[100%] font-light mb-10'> {ProductState.data['product-description']} </div>
                 <div className='flex fixed  w-[100%] bottom-0'> 
                 <div className='w-1/5 mx-2 py-4 flex justify-center my-4 px-2 rounded-lg bg-gray-300'>{Svg.save()}</div>
-                <div className='w-4/5 mx-2 py-4 text-center my-4 px-2 rounded-lg bg-gray-900 text-white text-xl'> Add to Cart </div>
+                <Link className='w-4/5 mx-2 py-4 text-center my-4 px-2 rounded-lg bg-gray-900 text-white text-xl' to={`/cart/${ProductState.data.category}/${ProductState.data.link}/${quantity}`} >   <div> Add to Cart </div> </Link>
              </div>
              </div>
            

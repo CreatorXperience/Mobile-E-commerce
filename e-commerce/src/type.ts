@@ -54,3 +54,16 @@ export type forHomeErrorProps = {
       "product-description": string
   } 
   }
+
+  
+export type forProductState = {
+  data: {
+      "category":  string;
+      "link": number,
+      "product-image-link": string,
+      "product-name": string,
+      "product-amount": number,
+      "product-reviews": number,
+      "product-description": string
+  }
+}

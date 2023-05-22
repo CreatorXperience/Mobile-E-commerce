@@ -1,5 +1,4 @@
-import cardSvg from "../assets/card.png";
-import SumPrice from "./SumPrice";
+import { useState } from "react";
 import Svg from "./icons/Svg";
 
 type itemProps = {
@@ -9,18 +8,18 @@ type itemProps = {
   quantity: number;
 };
 
-const ItemCard = ({ img, darkShoppingBag, sumPrice, quantity }: itemProps) => {
+const ItemCard = ({img,darkShoppingBag,sumPrice, quantity }: itemProps) => {
   let costPrice = 3000;
   costPrice *= quantity;
-  // if (typeof quantity != "undefined") {
-  //   costPrice *= quantity;
-  // }
+  
+
+  const [quant, getQuant] = useState(0)
   return (
-    <div className=" w-[270px] cursor-pointer">
+    <div className=" w-[96%] mx-2 mt-2 cursor-pointer shadow-md py-2 rounded-sm">
       <div className="flex justify-evenly">
         <img
           src={img}
-          alt="image"
+          alt="productImage"
           className="w-auto h-[90px] rounded mt-[2px]"
         />
 
@@ -29,10 +28,13 @@ const ItemCard = ({ img, darkShoppingBag, sumPrice, quantity }: itemProps) => {
           <span>${costPrice}</span>
           {sumPrice}
         </div>
-        <div className="flex flex-col justify-between">
+        <div className="flex  justify-between">
           {Svg.close()}
+
           {darkShoppingBag}
         </div>
+
+      
       </div>
     </div>
   );

@@ -1,44 +1,34 @@
-import React, {useEffect,useState} from 'react'
-import axios from 'axios'
-import { useParams} from 'react-router-dom'
-import { forProductState } from '../type'
-const Cart = ()=>{
-    let {id,term} = useParams()
-    const [cart,setCart] = useState<forProductState>({data:  {
-        "category": '',
-        "link": 0,
-        "product-image-link": "",
-        "product-name": "",
-        "product-amount": 0,
-        "product-reviews": 0,
-        "product-description": ""
-    }})
+import React, { useEffect,useState} from 'react'
+import ItemCard from '../components/ItemCard'
+import { forCartItem} from '../type'
+
+
+const Cart = ({item}:forCartItem)=>{
+    const [cartItem, setCartItem]= useState(item)
+    
+    useEffect(()=> {
+        let item =   localStorage.getItem('cart')
+        if(item !== undefined){
+            setCartItem(JSON.parse(item as string))
+        }
+      },[])
+    
+
+    useEffect(()=> {
+localStorage.setItem('cart',JSON.stringify(cartItem))
+    })
+
+   
 
     
 
-useEffect(()=> {
-    const handleImmediateFetch = async (term:string, id:string)=> {
-        let response = await axios.get(`http://localhost:3030/${term}/${id}`)
-       setCart({data: response.data})
-    }
-    handleImmediateFetch(term as string, id as string)
-},[term,id])
-
-useEffect(()=> {
-   const Item =  localStorage.getItem('product')
-    if(Item !== null || Item !== undefined){
-     setCart(JSON.parse(Item as string))
-    }
-},[])
-
-useEffect(()=> {
-    localStorage.setItem('product', JSON.stringify(cart))
-    console.log("i ran");
-})
-
-console.log(cart)
+   let eachItem = cartItem.map((item)=> {
+      return   <ItemCard />
+   })
 return (
-    <div> hi </div>
+    <div> 
+   {eachItem}
+    </div>
    
 )
 }

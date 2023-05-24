@@ -35,3 +35,52 @@
   display: none;
 }
 
+#Jump {
+  transform: translateY(0%);
+  animation: Jump .4s ease-in-out;
+}
+ #unmount {
+  transform: translateY(0%);
+  animation: unmount .4s ease-in-out;
+ }
+
+ #bounce {
+  transform: translateY(0%);
+  animation: bounce .9s   ease-in-out;
+  opacity: 0;
+ }
+
+@keyframes Jump {
+  0%{
+    transform: translateY(0%);
+  }
+
+  50%{
+    transform: translateY(20%);
+  }
+  100%{
+    transform: translateY(0%);
+  }
+}
+
+@keyframes bounce {
+  0%{
+    transform: translateY(0%);
+    opacity: 0.1;
+  }
+
+  50%{
+    transform: translateY(20%);
+    opacity: 0.2;
+  }
+
+  80%{
+    transform: translateY(0%);  
+    opacity: 0.4;
+  }
+ 100%{
+    opacity: 0;
+  }
+}
+
+

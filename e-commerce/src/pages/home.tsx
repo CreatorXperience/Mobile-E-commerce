@@ -104,13 +104,13 @@ else {
         <div className='font-light text-center'> Make home </div>
         <div className='font-bold text-lg text-center'>BEAUTIFUL </div>
         </div>
-        <div> {Svg.cart()}</div>
+       <Link to='/cart'>  <div> {Svg.cart()}</div> </Link> 
          </div>
         <div className='mx-4 my-4 md:translate-x-8'>
          <div className='container w-[100%] flex justify-around'> 
         <div> 
 
-         <div className='w-[4rem] bg-gray-800 rounded-2xl flex animate-bounce justify-center  py-5'> 
+         <div className='w-[4rem] bg-gray-800 rounded-2xl flex justify-center  py-5'> 
          <p onClick={(e)=> handleItemClick(e,"popular")}>  {Svg.star()} </p>
          </div>
 

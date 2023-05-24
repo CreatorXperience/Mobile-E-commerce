@@ -13,18 +13,18 @@ useEffect(()=> {
 getQuantity(newQuantity)
 },[newQuantity,getQuantity])
   return (
-    <div className="mx-4">
+    <div className="mx-2">
 
       <div>
         <button
-          className="border-2 bg-gray-300 font-semibold m-2 h-auto p-[2px]  w-[30px] rounded"
+          className="border-2 bg-gray-200 font-semibold m-2 h-auto p-[2px] text-xl  w-[36px] rounded"
           onClick={() => setNewQuantity( newQuantity === 0 ? 0 :newQuantity-1)}
         >
           -
         </button>
         <span>{newQuantity}</span>
         <button
-          className="border-2 bg-gray-300 font-semibold m-2 h-auto p-[2px] w-[30px] rounded"
+          className="border-2 bg-gray-200 font-semibold m-2 h-auto p-[2px] w-[36px] text-xl rounded"
           onClick={() => setNewQuantity(newQuantity+1)}
         >
           +

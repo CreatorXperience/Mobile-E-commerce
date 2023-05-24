@@ -57,7 +57,20 @@ export type forHomeErrorProps = {
 
   
 export type forProductState = {
-  data: {
+  data:[ {
+      "category":  string;
+      "link": number,
+      "product-image-link": string,
+      "product-name": string,
+      "product-amount": number,
+      "product-reviews": number,
+      "product-description": string
+  }]
+}
+
+
+export type forCurrentProductState = {
+  data:{
       "category":  string;
       "link": number,
       "product-image-link": string,
@@ -67,3 +80,17 @@ export type forProductState = {
       "product-description": string
   }
 }
+
+
+export type productCardType = {
+  AddToCart: (item:{})=> void
+}
+
+// export type forProductPageProps = {
+//   addToCart: (item:{})=> void
+// }
+
+export type forCartItem = {
+  item: {}[]
+}
+

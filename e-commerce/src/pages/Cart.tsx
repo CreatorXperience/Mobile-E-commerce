@@ -1,33 +1,26 @@
-import React, { useEffect,useState} from 'react'
+import React, {useContext} from 'react'
+import { CartContextType, forCartItem} from '../type'
+import { Context } from '../App'
 import ItemCard from '../components/ItemCard'
-import { forCartItem} from '../type'
 
 
-const Cart = ({item}:forCartItem)=>{
-    const [cartItem, setCartItem]= useState(item)
-    
-    useEffect(()=> {
-        let item =   localStorage.getItem('cart')
-        if(item !== undefined){
-            setCartItem(JSON.parse(item as string))
-        }
-      },[])
-    
-
-    useEffect(()=> {
-localStorage.setItem('cart',JSON.stringify(cartItem))
+const Cart = ()=>{
+    const {cart,handleRemoveCart} = useContext(Context) as CartContextType
+console.log(cart)
+   let newCart =  cart.map(()=> {
+        return <ItemCard />
     })
-
-   
-
     
-
-   let eachItem = cartItem.map((item)=> {
-      return   <ItemCard />
-   })
 return (
     <div> 
-   {eachItem}
+        <div className='flex w-[100%] justify-center'> 
+        <div> 
+      
+        </div>
+
+        <div>{newCart}</div>
+        </div> 
+  
     </div>
    
 )

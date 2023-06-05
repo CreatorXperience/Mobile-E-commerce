@@ -83,14 +83,21 @@ export type forCurrentProductState = {
 
 
 export type productCardType = {
-  AddToCart: (item:{})=> void
+  AddToCart: (item:forCurrentProductState)=> void
 }
 
 // export type forProductPageProps = {
 //   addToCart: (item:{})=> void
 // }
 
+export type CartContextType = {
+   cart: {}[],
+   handleRemoveCart: (index:number)=> void
+}
 export type forCartItem = {
-  item: {}[]
+  item: {
+    "link"?: string
+    
+  }[]
 }
 

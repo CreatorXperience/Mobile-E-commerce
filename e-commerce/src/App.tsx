@@ -11,7 +11,6 @@ import { CartContextType, forCurrentProductState } from "./type";
 
 export const Context = React.createContext<CartContextType|null>(null)
 const App = () => {
-
 const [cart, setCart]= useState<{}[]>([])
 
 const handleRemoveCart = useCallback((index: number)=> {

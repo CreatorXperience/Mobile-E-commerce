@@ -5,7 +5,7 @@ import { forCartItem, forCurrentProductState } from "../type";
 
 
 
-const ItemCard = () => {
+const ItemCard = (props:{key: number, content: forCurrentProductState}) => {
 const [quant,getQuan] = useState(0)
 
 
@@ -16,16 +16,16 @@ const [quant,getQuan] = useState(0)
    <div className=" w-[100%] flex mx-2 mt-2 cursor-pointer shadow-md py-1 rounded-sm">
      <div className="w-[100%] flex"> 
    <div>
-    <img src="https://i.pinimg.com/564x/8f/08/74/8f0874b2ad7b5d5fa46633cfed69017f.jpg" alt="img" className="w-36 rounded-2xl"/>
+    <img src={props.content.data["product-image-link"]} alt="img" className="w-36 rounded-2xl"/>
      </div> 
 <div className="w-[100%]"> 
      <div className="w-[100%] flex justify-between"> 
-      <div className="text-gray-400 font-normal text-md mx-4">Minimal Stand</div> 
+      <div className="text-gray-400 font-normal text-md mx-4">{props.content.data["product-name"]}</div> 
      
       <div>{Svg.close()}</div>
      </div>
 
-<div className="text-gray-900 font-semibold text-md mx-4"> $ <span>25.00</span></div>
+<div className="text-gray-900 font-semibold text-md mx-4"> $ <span>{props.content.data["product-amount"]}</span></div>
 
 
 <div className="w-[100%] flex justify-between"> 

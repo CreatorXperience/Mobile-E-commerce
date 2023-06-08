@@ -57,15 +57,7 @@ export type forHomeErrorProps = {
 
   
 export type forProductState = {
-  data:[ {
-      "category":  string;
-      "link": number,
-      "product-image-link": string,
-      "product-name": string,
-      "product-amount": number,
-      "product-reviews": number,
-      "product-description": string
-  }]
+  data: forCurrentProductState[]
 }
 
 
@@ -91,8 +83,9 @@ export type productCardType = {
 // }
 
 export type CartContextType = {
-   cart: {}[],
-   handleRemoveCart: (index:number)=> void
+   cart: forCurrentProductState[],
+   handleRemoveCart: (index:number)=> void,
+   handleAddToCart: (item: forCurrentProductState)=> void
 }
 export type forCartItem = {
   item: {

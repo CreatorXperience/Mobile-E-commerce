@@ -16,7 +16,7 @@ const Home = ()=> {
     const elementRef = createRef<HTMLInputElement>()
 
 
-    let handleFetch =  async (term:string) => {
+    let HandleFetch =  async (term:string) => {
         try {
             let response = await axios.get(`http://localhost:3030/${term}`)
             let responseData = response.data
@@ -38,7 +38,7 @@ setFetchState({drop: errorState})
 
 useEffect(()=> {
     if(userInput === "popular"){
-          setTimeout(()=> handleFetch(userInput),500)
+          setTimeout(()=> HandleFetch(userInput),500)
        }
 },[userInput])
 
@@ -65,7 +65,7 @@ useEffect(()=> {
 
     const handleFormSubmit =(event: React.FormEvent<HTMLFormElement>)=> {
     event.preventDefault()
-    setTimeout(()=> handleFetch(userInput),500)
+    setTimeout(()=> HandleFetch(userInput),500)
     }
 
     const handleInputChange =(event: React.ChangeEvent<HTMLInputElement>)=> {
@@ -74,7 +74,7 @@ useEffect(()=> {
 
     const handleItemClick = (e: React.MouseEvent<HTMLDivElement>,item:string)=> {
         setUserInput(item)
-   handleFetch(item)
+   HandleFetch(item)
 }
 
 

@@ -5,15 +5,16 @@ import ItemCard from '../components/ItemCard'
 
 
 const Cart = ()=>{
-    const {cart,handleRemoveCart} = useContext(Context) as CartContextType
-console.log(cart)
-   let newCart =  cart.map(()=> {
-        return <ItemCard />
+    const {cart,handleRemoveCart,handleAddToCart} = useContext(Context) as CartContextType
+    
+   let newCart =  cart.map((item)=> {
+    let {data} = item
+        return <ItemCard key={data['product-reviews']} content={item}/>
     })
     
 return (
     <div> 
-        <div className='flex w-[100%] justify-center'> 
+        <div className='w-[100%] '> 
         <div> 
       
         </div>

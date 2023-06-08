@@ -10,23 +10,34 @@ import Cart from "./pages/Cart";
 import { CartContextType, forCurrentProductState } from "./type";
 
 export const Context = React.createContext<CartContextType|null>(null)
+
 const App = () => {
-const [cart, setCart]= useState<{}[]>([])
+  
+const [cart, setCart]= useState<forCurrentProductState[]>([])
 
 const handleRemoveCart = useCallback((index: number)=> {
   if(cart.length > index){
     cart.splice(index,1)
     localStorage.setItem('cart', JSON.stringify(cart))
   }
-
 },[cart])
 
 
+const handleAddToCart = (item:forCurrentProductState)=> {
+  let content = localStorage.getItem('cart')
+let parsedContent = JSON.parse(content as string)
+  if(parsedContent){
+    let newStore  = [...parsedContent,item]
+    setCart(newStore)
+    localStorage.setItem("cart", JSON.stringify(newStore))
+  }
+    }
+
 const value = useMemo(()=> {
 return (
-  {cart,handleRemoveCart}
+  {cart,handleRemoveCart,handleAddToCart}
 )
-},[cart,handleRemoveCart])
+},[cart,handleRemoveCart,handleAddToCart])
 
 useEffect(()=> {
   let item = localStorage.getItem('cart')
@@ -34,13 +45,14 @@ useEffect(()=> {
   if(item){
     setCart(JSON.parse(item))
   }
+  else {
+    localStorage.setItem("cart", JSON.stringify(cart))
+  }
 
 },[])
 
-  const handleAddToCart = (item:forCurrentProductState)=> {
-setCart(cart => [...cart,item])
-localStorage.setItem('cart', JSON.stringify(cart))
-  }
+
+
 
 
 console.log(cart)

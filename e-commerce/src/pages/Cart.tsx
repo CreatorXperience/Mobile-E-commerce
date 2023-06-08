@@ -1,5 +1,5 @@
 import React, {useContext} from 'react'
-import { CartContextType, forCartItem} from '../type'
+import { CartContextType} from '../type'
 import { Context } from '../App'
 import ItemCard from '../components/ItemCard'
 
@@ -7,9 +7,9 @@ import ItemCard from '../components/ItemCard'
 const Cart = ()=>{
     const {cart,handleRemoveCart,handleAddToCart} = useContext(Context) as CartContextType
     
-   let newCart =  cart.map((item)=> {
+   let newCart =  cart.map((item,index)=> {
     let {data} = item
-        return <ItemCard key={data['product-reviews']} content={item}/>
+        return <ItemCard key={data['product-reviews']} Index = {index} content={item}/>
     })
     
 return (

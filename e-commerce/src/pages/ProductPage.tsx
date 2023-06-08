@@ -1,5 +1,5 @@
 
-import React, { useEffect,useState } from 'react'
+import React, { useEffect,useState,useMemo } from 'react'
 import { Link,useParams } from 'react-router-dom'
 import axios from 'axios'
 import Svg from '../components/icons/Svg'
@@ -18,16 +18,22 @@ const [ProductState, setProductState] = useState<forCurrentProductState>({data: 
         "product-name": "",
         "product-amount": 0,
         "product-reviews": 0,
-        "product-description": "",
-        
+        "quantity": 1,
+        "product-description": "",     
 }})
 
-const [quantity,setQuantity]= useState(0)
+const [quantity,setQuantity]= useState(1)
 
+const memoize = useMemo(()=> {
+return {term,id}
+},[term,id])
 
 const AddProductTOCart = ()=> {
-    AddToCart(ProductState)
-}
+    let Item = localStorage.getItem('cart')
+            AddToCart(ProductState,quantity)
+    }
+    
+
 
 const getQuantity = (newQuantity:number)=> {
     setQuantity(newQuantity)
@@ -40,9 +46,9 @@ const getQuantity = (newQuantity:number)=> {
         let response = await axios.get(`http://localhost:3030/${term}/${id}`)
         setProductState({data: response.data})
     }
-    handleImmediateFetch(term as string, id as string)
+    handleImmediateFetch(memoize.term as string, memoize.id as string)
    
- },[term,id])
+ },[memoize.term,memoize.id])
  
 useEffect(()=> {
     let getData = localStorage.getItem('product')
@@ -60,7 +66,7 @@ useEffect(()=> {
 })
 
 
-
+console.log(quantity)
 
     return (
         <div className='container w-[100%] h-[100vh]'>
@@ -85,7 +91,7 @@ useEffect(()=> {
                 <div className=' px-4 text-2xl font-semibold'>{ProductState.data['product-name']}</div>  
                 <div className='flex justify-between'>
                     <div className='px-4 text-3xl font-bold my-2'> <span>  $ </span> {ProductState.data['product-amount']} </div> 
-                    <SumPrice quantity={quantity} getQuantity={getQuantity}/> 
+                    <SumPrice quantity={ProductState.data.quantity} getQuantity={getQuantity}/> 
                     </div>
                 <div className='px-4 text-[15px] w-[100%] font-light mb-10'> {ProductState.data['product-description']} </div>
                 <div className='flex fixed  w-[100%] bottom-0'> 

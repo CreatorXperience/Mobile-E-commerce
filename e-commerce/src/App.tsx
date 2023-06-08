@@ -15,16 +15,25 @@ const App = () => {
   
 const [cart, setCart]= useState<forCurrentProductState[]>([])
 
-const handleRemoveCart = useCallback((index: number)=> {
-  if(cart.length > index){
-    cart.splice(index,1)
-    localStorage.setItem('cart', JSON.stringify(cart))
-  }
+
+const handleRemoveCart = useCallback((exp: number)=> {
+const cart = localStorage.getItem('cart')
+if(cart){
+  
+let parsedCart = JSON.parse(cart)
+
+ let filtered =  parsedCart.filter((el:forCurrentProductState,index:number)=> index !== exp )
+ localStorage.setItem("cart", JSON.stringify(filtered))
+ setCart(filtered)
+}
 },[cart])
 
 
-const handleAddToCart = (item:forCurrentProductState)=> {
-  let content = localStorage.getItem('cart')
+
+const handleAddToCart = (item:forCurrentProductState,quantity:number)=> {
+item.data.quantity = quantity
+
+   let content = localStorage.getItem('cart')
 let parsedContent = JSON.parse(content as string)
   if(parsedContent){
     let newStore  = [...parsedContent,item]

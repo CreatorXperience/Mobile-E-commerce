@@ -30,6 +30,7 @@ let errorState =  [{
      "product-name": "error",
      "product-amount": 0,
      "product-reviews": 0,
+     "quantity": 0,
      "product-description": "Sorry Can't find what you search for try rephrasing the term"
 }]
 setFetchState({drop: errorState})

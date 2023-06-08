@@ -38,6 +38,7 @@ export type forHomeState = {
        "product-name": string,
        "product-amount": number,
        "product-reviews": number,
+       "quantity": number,
        "product-description": string
    }[] 
 }
@@ -51,6 +52,7 @@ export type forHomeErrorProps = {
       "product-name": string,
       "product-amount": number,
       "product-reviews": number,
+      "quantity": number,
       "product-description": string
   } 
   }
@@ -69,13 +71,14 @@ export type forCurrentProductState = {
       "product-name": string,
       "product-amount": number,
       "product-reviews": number,
+      "quantity": number,
       "product-description": string
   }
 }
 
 
 export type productCardType = {
-  AddToCart: (item:forCurrentProductState)=> void
+  AddToCart: (item:forCurrentProductState,quantity: number)=> void
 }
 
 // export type forProductPageProps = {
@@ -84,13 +87,7 @@ export type productCardType = {
 
 export type CartContextType = {
    cart: forCurrentProductState[],
-   handleRemoveCart: (index:number)=> void,
-   handleAddToCart: (item: forCurrentProductState)=> void
-}
-export type forCartItem = {
-  item: {
-    "link"?: string
-    
-  }[]
+   handleRemoveCart: (exp:number)=> void,
+   handleAddToCart: (item: forCurrentProductState,quantity:number)=> void
 }
 

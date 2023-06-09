@@ -1,49 +1,21 @@
-import React,{useState,createRef, useEffect} from 'react'
+import React,{useState,createRef, useEffect,useContext} from 'react'
 import Svg from '../components/icons/Svg'
 import "../../src/style.css"
 import ProductCard from '../components/productCard'
 import Footer from '../components/footer'
-import axios from 'axios'
 import HomeError from './HomeError'
 import { Link} from 'react-router-dom'
-import { forHomeState } from '../type'
+import { CartContextType} from '../type'
+import { forHomePageProps } from '../type'
+import { Context } from '../App'
 
-
-const Home = ()=> {
+const Home = ({handleFetch}:forHomePageProps)=> {
     const [inputState, setInputState]= useState(true)
-    const [initialFetchState, setFetchState] = useState<forHomeState>({drop: []})
     const [userInput, setUserInput] = useState('popular')
     const elementRef = createRef<HTMLInputElement>()
 
-
-    let HandleFetch =  async (term:string) => {
-        try {
-            let response = await axios.get(`http://localhost:3030/${term}`)
-            let responseData = response.data
-            setFetchState({drop: responseData})  
-        }
-      catch(e){
-let errorState =  [{
-    "category":  "popular",
-    "link": 10,
-     "product-image-link": 'https://i.pinimg.com/564x/bd/6e/5c/bd6e5ce4130322f588640258fca7b03b.jpg',
-     "product-name": "error",
-     "product-amount": 0,
-     "product-reviews": 0,
-     "quantity": 0,
-     "product-description": "Sorry Can't find what you search for try rephrasing the term"
-}]
-setFetchState({drop: errorState})
-      }
-}
-
-useEffect(()=> {
-    if(userInput === "popular"){
-          setTimeout(()=> HandleFetch(userInput),500)
-       }
-},[userInput])
-
-
+    const {fetchState} = useContext(Context) as CartContextType
+    
     useEffect(()=> {
         let EVLISTENER =  (e:MouseEvent)=> {
                 if(elementRef.current && !elementRef.current.contains(e.target as Node)){
@@ -61,12 +33,12 @@ useEffect(()=> {
     const handleSearchIconClick = (event: React.MouseEvent<HTMLDivElement>)=> {
         event.stopPropagation()
        setInputState(!inputState) 
-       console.log('from handle click' + inputState)
+      
     }
 
     const handleFormSubmit =(event: React.FormEvent<HTMLFormElement>)=> {
     event.preventDefault()
-    setTimeout(()=> HandleFetch(userInput),500)
+    setTimeout(()=> handleFetch(userInput),500)
     }
 
     const handleInputChange =(event: React.ChangeEvent<HTMLInputElement>)=> {
@@ -75,14 +47,14 @@ useEffect(()=> {
 
     const handleItemClick = (e: React.MouseEvent<HTMLDivElement>,item:string)=> {
         setUserInput(item)
-   HandleFetch(item)
+   handleFetch(item)
 }
 
 
 
-let {drop} = initialFetchState
-let ProductImage = drop.map((datas)=> {
-if(drop[0]['product-name'] === "error"){
+
+let ProductImage = fetchState.map((datas)=> {
+if(fetchState[0]['product-name'] === "error"){
     return <HomeError key = {datas['product-name']} userInput = {userInput} content = {datas} />
 }
 

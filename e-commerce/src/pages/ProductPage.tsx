@@ -8,6 +8,7 @@ import {forCurrentProductState} from '../type'
 import { productCardType } from '../type'
 import "../../src/style.css"
 
+
 const ProductPage = ({AddToCart}:productCardType)=> {
  let {id,term} = useParams()
 
@@ -19,18 +20,25 @@ const [ProductState, setProductState] = useState<forCurrentProductState>({data: 
         "product-amount": 0,
         "product-reviews": 0,
         "quantity": 1,
-        "product-description": "",     
+        "product-description": "",
 }})
 
 const [quantity,setQuantity]= useState(1)
+const [isAdded, setIsAdded] = useState(false)
 
 const memoize = useMemo(()=> {
 return {term,id}
 },[term,id])
 
 const AddProductTOCart = ()=> {
-    let Item = localStorage.getItem('cart')
-            AddToCart(ProductState,quantity)
+  
+    if(!isAdded){
+        AddToCart(ProductState,quantity)
+        setIsAdded(true)
+    }else{
+        return 
+    }
+       
     }
     
 
@@ -66,15 +74,13 @@ useEffect(()=> {
 })
 
 
-console.log(quantity)
-
     return (
         <div className='container w-[100%] h-[100vh]'>
             <div className='w-[100%] relative'> 
             <div className='flex justify-center absolute z-40 w-[100%]' >
-            <div className='w-4/5 mx-2 py-4 opacity-80 text-center top-[60rem] mt-10  my-4 px-2 rounded-full bg-gray-900 text-white text-xl' id='bounce'> 
+            {isAdded? <div className='w-4/5 mx-2 py-4 opacity-80 text-center top-[60rem] mt-10  my-4 px-2 rounded-full bg-gray-900 text-white text-xl' id='bounce'> 
         Added to Cart
-         </div>
+         </div>: ''}
          </div>
            <Link to="/home">  <div className='w-10 shadow-md rounded-md flex justify-center z-50 bg-white py-2 top-2 absolute left-14'> {Svg.back()} </div> </Link>
             <div className='w-16 bg-white rounded-full flex align-center py-4 px-4 flex-col absolute z-40 shadow-md left-10 top-24'> 

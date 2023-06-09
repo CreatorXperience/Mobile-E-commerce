@@ -6,9 +6,8 @@
               "product-name": "Double Bed",
               "product-amount": 50,
               "product-reviews": 40,
-              "quantity" : 1,
+              "quantity" : 1,   
               "product-description": "Double Bed Design does have a high influence of classic to modern tone, it even comes with storage and different style of headboards. Depending on the theme of the bedroom the bed could vary from cantilever to mid-century"
-              
           }, {
             "category":  "bed",
             "link": 2,
@@ -142,6 +141,7 @@
             "product-amount": 80,
             "product-reviews": 110,
             "quantity" : 1,
+
             "product-description": "A black storage set wardrobe is a functional and stylish storage solution that provides ample space to store your clothes, accessories, and other personal belongings. It typically features multiple shelves, hanging rods, and drawers, providing a variety of storage options"
         },
         {
@@ -152,6 +152,7 @@
             "product-amount": 60,
             "product-reviews": 150,
             "quantity" : 1,
+
             "product-description": "It typically features three sections or compartments, each with a combination of hanging rods, shelves, and drawers. The white color gives it a clean and fresh look that complements any interior design style and color scheme."
         },
         {
@@ -162,6 +163,7 @@
             "product-amount": 80,
             "product-reviews": 320,
             "quantity" : 1,
+
             "product-description": " A milky color sofa is typically upholstered in high-quality fabric, leather, or a combination of materials, providing both comfort and durability"
         },{
             "category":  "wardrobe",
@@ -171,6 +173,7 @@
             "product-amount": 2000,
             "product-reviews": 300,
             "quantity" : 1,
+
             "product-description": "This type of wardrobe typically features a sleek and modern design, with clean lines and a minimalist aesthetic that creates a sense of sophistication and elegance. It is often available in a range of colors and finishes, allowing you to choose the one that best complements your bedroom decor."
         },{
             "category":  "wardrobe",
@@ -180,6 +183,7 @@
             "product-amount": 3000,
             "product-reviews": 102,
             "quantity" : 1,
+
             "product-description": "It is designed to fit perfectly in your space and to accommodate your unique storage requirements, such as the number of hanging rods, shelves, drawers, and other storage options. With a customized wardrobe, you can choose the style, finish, and color that best suits your personal taste and bedroom decor"
         },
         {

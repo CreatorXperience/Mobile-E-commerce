@@ -88,6 +88,22 @@ export type productCardType = {
 export type CartContextType = {
    cart: forCurrentProductState[],
    handleRemoveCart: (exp:number)=> void,
-   handleAddToCart: (item: forCurrentProductState,quantity:number)=> void
+   handleAddToCart: (item: forCurrentProductState,quantity:number)=> void,
+   fetchState: {
+    "category":  string;
+       "link": number,
+       "product-image-link": string,
+       "product-name": string,
+       "product-amount": number,
+       "product-reviews": number,
+       "quantity": number,
+       "product-description": string
+   }[],
+   QTY: number,
+   setQTY: React.Dispatch<React.SetStateAction<number>>
 }
 
+//REFACTOR
+export type forHomePageProps = {
+  handleFetch: (term: string)=> void
+}

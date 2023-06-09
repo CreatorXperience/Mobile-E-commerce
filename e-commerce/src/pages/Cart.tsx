@@ -5,9 +5,12 @@ import ItemCard from '../components/ItemCard'
 
 
 const Cart = ()=>{
-    const {cart,handleRemoveCart,handleAddToCart} = useContext(Context) as CartContextType
-    
-   let newCart =  cart.map((item,index)=> {
+    const {cart} = useContext(Context) as CartContextType
+let SlicedCart
+SlicedCart = cart.slice(1, cart.length)
+   
+
+   let newCart =  SlicedCart.map((item,index)=> {
     let {data} = item
         return <ItemCard key={data['product-reviews']} Index = {index} content={item}/>
     })

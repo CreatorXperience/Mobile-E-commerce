@@ -1,22 +1,32 @@
-import { useState,useContext} from "react";
+import {useContext, useEffect} from "react";
 import Svg from "./icons/Svg";
 import SumPrice from "./SumPrice";
-import {CartContextType, forCurrentProductState } from "../type";
+import {CartContextType, forCurrentProductState, forQTYPROPS } from "../type";
 import { Context } from "../App";
+import { QTYCONTEXT } from "../pages/Cart";
 
 const ItemCard = (props:{key: number, Index: number, content: forCurrentProductState}) => {
   let {handleRemoveCart} = useContext(Context) as CartContextType
-const  [quant, setQuantity] = useState(props.content.data.quantity)
-const [amount,setAmount] = useState(props.content.data["product-amount"])
+  let {Price,UPDATE_QTY_AND_PRICE} = useContext(QTYCONTEXT) as forQTYPROPS
+  
+
+  useEffect(()=> {
+
+  },[])
+// const  [quant, setQuantity] = useState(props.content.data.quantity)
+
+// const [Fixedamount,setAmount] = useState(props.content.data["product-amount"])
+
+// let  determinePriceBasedOnQTY = props.content.data["product-amount"]
 
 const handleRemoveItem = ()=> {
 handleRemoveCart(props.Index)
 }
 
 const handleMultiplyAmount = (amount: number)=> {
-  let  determinePriceBasedOnQTY = amount * props.content.data["product-amount"];
-  setAmount(determinePriceBasedOnQTY)
+  UPDATE_QTY_AND_PRICE(props.Index,amount)
 }
+
 
 
   return (
@@ -33,11 +43,11 @@ const handleMultiplyAmount = (amount: number)=> {
       <div onClick={handleRemoveItem}>{Svg.close()}</div>
      </div>
 
-<div className="text-gray-900 font-semibold text-md mx-4"> $ <span>{amount}</span></div>
+<div className="text-gray-900 font-semibold text-md mx-4"> $ <span>{Price.TotalPrice}</span></div>
 
 
 <div className="w-[100%] flex justify-between"> 
-<div className="mt-4"> <SumPrice quantity={quant} getQuantity={handleMultiplyAmount} />  </div>
+<div className="mt-4"> <SumPrice quantity={Price.Quantity} getQuantity={handleMultiplyAmount} />  </div>
 
 <div className="mx-4 mt-8">{Svg.darkShoppingBag()} </div>
 </div>

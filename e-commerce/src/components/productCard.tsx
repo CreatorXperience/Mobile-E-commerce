@@ -25,3 +25,7 @@ const ProductCard = ({content}:forProductCardProps)=> {
 }
 
 export default ProductCard; 
+
+
+
+  

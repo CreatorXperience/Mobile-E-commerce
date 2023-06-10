@@ -58,7 +58,7 @@ if(fetchState != null){
         }
         
         else {
-            return  <Link to = {`/product/${datas.category}/${datas.link}`}  key={datas.link} > 
+            return  <Link  to = {`/product/${datas.category}/${datas.link}`}  key={datas.link} > 
             <ProductCard key = {datas.link} content = {datas}/>  
             </Link>
         }

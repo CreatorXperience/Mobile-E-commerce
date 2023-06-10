@@ -28,8 +28,8 @@ const [fetchState, setFetchState] = useState<{
 }[] | null>(null)
 
 
-const [QTY, setQTY] =  useState(1)
-let CalcAmount; 
+const [QTY, setQTY] =  useState<number[]>([])
+let [amount, setAmount] = useState<number[]>([])
 
 let HandleFetch = useCallback( async (term:string) => {
   try {
@@ -91,11 +91,19 @@ let parsedCart = JSON.parse(cart)
 }
 },[] )
 
+const handleAmount = (item:forCurrentProductState)=> {
+  setAmount(amount => [...amount,item.data["product-amount"]])
+}
 
+const handleQuantity = (item: forCurrentProductState,quantity:number)=> {
+  item.data.quantity = quantity
+}
 
 const handleAddToCart = useCallback((item:forCurrentProductState,quantity:number)=> {
+// handleAmount(item)
+// handleQuantity(item,quantity)
 
-item.data.quantity = quantity
+// item.data["product-amount"] *= quantity
 let content = localStorage.getItem('cart')
 let parsedContent:forCurrentProductState[] = JSON.parse(content as string)
 parsedContent.map((el)=> {

@@ -14,7 +14,7 @@ const ProductCard = ({content}:forProductCardProps)=> {
         <div className='w-30 rounded-md my-[12px] mx-4 '> 
             <div className='container w-30'> 
              { content  ?  <img src={content?.['product-image-link']} className='w-30 rounded-2xl z-10' alt="hum"  />: ''}
-          { !content  ? <div className='container w-[100%] h-[10rem] rounded-2xl z-10 animate-pulse bg-gray-400 '>   </div>:"" }
+          { !content  ? <div className='container w-[100%] h-[10rem] rounded-2xl z-10 animate-pulse bg-gray-200 '>   </div>:"" }
             </div>
 
            { content ? <div className='font-normal text-[14px] text-gray-400'> {content?.['product-name']}</div>: ''}

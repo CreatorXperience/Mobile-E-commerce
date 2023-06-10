@@ -15,7 +15,7 @@ const Home = ({handleFetch}:forHomePageProps)=> {
     const elementRef = createRef<HTMLInputElement>()
 
     const {fetchState} = useContext(Context) as CartContextType
-    
+
     useEffect(()=> {
         let EVLISTENER =  (e:MouseEvent)=> {
                 if(elementRef.current && !elementRef.current.contains(e.target as Node)){
@@ -50,21 +50,25 @@ const Home = ({handleFetch}:forHomePageProps)=> {
    handleFetch(item)
 }
 
-
-
-
-let ProductImage = fetchState.map((datas)=> {
-if(fetchState[0]['product-name'] === "error"){
-    return <HomeError key = {datas['product-name']} userInput = {userInput} content = {datas} />
+let ProductImage
+if(fetchState != null){
+     ProductImage = fetchState.map((datas)=> {
+        if(fetchState[0]['product-name'] === "error"){
+            return <HomeError key = {datas['product-name']} userInput = {userInput} content = {datas} />
+        }
+        
+        else {
+            return  <Link to = {`/product/${datas.category}/${datas.link}`}  key={datas.link} > 
+            <ProductCard key = {datas.link} content = {datas}/>  
+            </Link>
+        }
+        
+          })
+        
 }
-
-else {
-    return  <Link to = {`/product/${datas.category}/${datas.link}`}  key={datas.link} > 
-    <ProductCard key = {datas.link} content = {datas}/>  
-    </Link>
+else{
+    ProductImage = [<ProductCard />,<ProductCard />,<ProductCard />,<ProductCard />, <ProductCard />]
 }
-
-  })
 
     return (
     <div>

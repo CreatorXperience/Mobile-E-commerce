@@ -98,7 +98,7 @@ export type CartContextType = {
        "product-reviews": number,
        "quantity": number,
        "product-description": string
-   }[],
+   }[] | null,
    QTY: number,
    setQTY: React.Dispatch<React.SetStateAction<number>>
 }

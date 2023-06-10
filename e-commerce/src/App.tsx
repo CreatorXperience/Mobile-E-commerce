@@ -25,7 +25,7 @@ const [fetchState, setFetchState] = useState<{
        "product-reviews": number,
        "quantity": number,
        "product-description": string
-}[]>([])
+}[] | null>(null)
 
 
 const [QTY, setQTY] =  useState(1)
@@ -34,7 +34,7 @@ let CalcAmount;
 let HandleFetch = useCallback( async (term:string) => {
   try {
       let response = await axios.get(`http://localhost:3030/${term}`)
-      let responseData = response.data
+      let responseData =  response.data
       setFetchState(responseData)  
   }
 catch(e){
@@ -54,7 +54,7 @@ setFetchState(errorState)
 
 
 useEffect(()=> {
-  setTimeout(()=> HandleFetch("popular"),500)
+  setTimeout(()=> HandleFetch("popular"),3000)
 },[HandleFetch])
 
 useEffect(() => {
@@ -84,8 +84,8 @@ const handleRemoveCart = useCallback((exp: number)=> {
 const cart = localStorage.getItem('cart')
 if(cart){
 let parsedCart = JSON.parse(cart)
-
- let filtered =  parsedCart.filter((el:forCurrentProductState,index:number)=> index !== exp )
+// let  SlicedCart = parsedCart.slice(1,parsedCart.length)
+ let filtered =  parsedCart.filter((el:forCurrentProductState,index:number)=> index-1 !== exp )
  localStorage.setItem("cart", JSON.stringify(filtered))
  setCart(filtered)
 }
@@ -94,8 +94,8 @@ let parsedCart = JSON.parse(cart)
 
 
 const handleAddToCart = useCallback((item:forCurrentProductState,quantity:number)=> {
+
 item.data.quantity = quantity
-item.data["product-amount"] *= quantity
 let content = localStorage.getItem('cart')
 let parsedContent:forCurrentProductState[] = JSON.parse(content as string)
 parsedContent.map((el)=> {

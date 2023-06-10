@@ -20,8 +20,8 @@ const handleMultiplyAmount = (amount: number)=> {
 
 
   return (
-    <div className="w-[100%] flex "> 
-   <div className=" w-[100%] flex mx-2 mt-2 cursor-pointer shadow-md py-1 rounded-sm">
+    <div className="w-[94%] flex mx-4  "> 
+   <div className=" w-[100%] flex mx-1 mt-2 cursor-pointer border-b-2 py-1 rounded-sm">
      <div className="w-[100%] flex">  
    <div>
     <img src={props.content.data["product-image-link"]} alt="img" className="w-36 rounded-2xl"/>

@@ -51,7 +51,7 @@ const getQuantity = (newQuantity:number)=> {
 
  useEffect(()=> {
     const handleImmediateFetch = async (term:string, id:string)=> {
-        let response = await axios.get(`http://localhost:3030/${term}/${id}`)
+        let response = await axios.get(`${process.env.REACT_APP_API_URL}/${term}/${id}`)
         setProductState({data: response.data})
     }
     handleImmediateFetch(memoize.term as string, memoize.id as string)

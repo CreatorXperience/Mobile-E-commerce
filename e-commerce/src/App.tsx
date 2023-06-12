@@ -32,7 +32,7 @@ const [fetchState, setFetchState] = useState<{
 
 let HandleFetch = useCallback( async (term:string) => {
   try {
-      let response = await axios.get(`http://localhost:3030/${term}`)
+      let response = await axios.get(`${process.env.REACT_APP_API_URL}/${term}`)
       let responseData =  response.data
       setFetchState(responseData)  
   }

@@ -28,8 +28,7 @@ const [fetchState, setFetchState] = useState<{
 }[] | null>(null)
 
 
-const [QTY, setQTY] =  useState<number[]>([])
-let [amount, setAmount] = useState<number[]>([])
+
 
 let HandleFetch = useCallback( async (term:string) => {
   try {
@@ -91,19 +90,23 @@ let parsedCart = JSON.parse(cart)
 }
 },[] )
 
-const handleAmount = (item:forCurrentProductState)=> {
-  setAmount(amount => [...amount,item.data["product-amount"]])
-}
 
-const handleQuantity = (item: forCurrentProductState,quantity:number)=> {
-  item.data.quantity = quantity
-}
+const handleQTY = useCallback((QTY:number, Currentcart:forCurrentProductState[], pos:number)=> {
+let current = Currentcart.forEach((product,index)=> {
+  if(pos === index){
+    product.data.quantity = QTY
+  }
+  else{
+    return
+  }
+
+  localStorage.setItem("cart", JSON.stringify(current))
+
+} )
+},[])
+
 
 const handleAddToCart = useCallback((item:forCurrentProductState,quantity:number)=> {
-// handleAmount(item)
-// handleQuantity(item,quantity)
-
-// item.data["product-amount"] *= quantity
 let content = localStorage.getItem('cart')
 let parsedContent:forCurrentProductState[] = JSON.parse(content as string)
 parsedContent.map((el)=> {
@@ -127,9 +130,9 @@ else{
 
 const value = useMemo(()=> {
 return (
-  {cart,handleRemoveCart,handleAddToCart,fetchState,QTY,setQTY}
+  {cart,handleRemoveCart,handleAddToCart,fetchState,handleQTY}
 )
-},[cart,handleRemoveCart,handleAddToCart,fetchState,QTY,setQTY])
+},[cart,handleRemoveCart,handleAddToCart,fetchState,handleQTY])
 
 
 

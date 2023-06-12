@@ -8,7 +8,7 @@ import {
 } from "../type";
 export const Context = React.createContext<ContextPropsP | null>(null);
 
-// type React.SetStateAction<S> = S | ((prevState: S) => S)
+
 
 export const ContextProvider = ({ children }: ContextProps) => {
   const [toggleIcon, setToggleIcon] = useState(false);

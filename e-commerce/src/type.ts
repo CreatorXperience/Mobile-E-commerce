@@ -99,22 +99,11 @@ export type CartContextType = {
        "quantity": number,
        "product-description": string
    }[] | null,
-   QTY: number[],
-   setQTY: React.Dispatch<React.SetStateAction<number[]>>
+   handleQTY: (QTY:number, cart:forCurrentProductState[],pos:number)=> void
+  
 }
 
 //REFACTOR
 export type forHomePageProps = {
   handleFetch: (term: string)=> void
-}
-
-export type forQTYPROPS = {
-  Price:{fixed: number,TotalPrice: number,Quantity:number,},
-  setPrice: React.Dispatch<React.SetStateAction<{
-    fixed: number;
-    TotalPrice: number;
-    Quantity:number,
-}>>,
-  
-  UPDATE_QTY_AND_PRICE:(id: number, qty:number)=> void
 }

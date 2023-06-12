@@ -1,47 +1,30 @@
-import React, {useContext,useState,createContext, useMemo,useCallback} from 'react'
-import { CartContextType, forCurrentProductState} from '../type'
+import React, {useContext,useCallback} from 'react'
+import { CartContextType} from '../type'
 import { Context } from '../App'
-import { forQTYPROPS } from '../type'
 import ItemCard from '../components/ItemCard'
 import Svg from '../components/icons/Svg'
 import { Link } from 'react-router-dom'
 import DiscountCard from '../components/DiscountCard'
 
-export const QTYCONTEXT = createContext<null | forQTYPROPS>(null)
+
 const Cart = ()=>{
    
     const {cart} = useContext(Context) as CartContextType
-    const [Price,setPrice] = useState({
-        fixed: 0,
-        TotalPrice: 0,
-        Quantity: 1
-    })
+  
 
   
  
 
 let SlicedCart = cart.slice(1, cart.length)
 
-const UPDATE_QTY_AND_PRICE = useCallback((productID:number,quantity:number)=> {
-    cart.map((el:forCurrentProductState,index)=> {
-        if(productID === index){
-    setPrice({fixed: el.data['product-amount'],TotalPrice: el.data['product-amount'] * quantity,Quantity:quantity})
-            el.data.quantity = quantity
-            return ""
-        }
-       return ""
-    })
-},[cart])
 
 
 
-   const value = useMemo(()=> {
-return {Price,setPrice,UPDATE_QTY_AND_PRICE}
-   },[Price,setPrice,UPDATE_QTY_AND_PRICE])
+
 
    let newCart =  SlicedCart.map((item,index)=> {
     let {data} = item
-        return <QTYCONTEXT.Provider value={value}> <ItemCard key={data['product-reviews']} Index = {index} content={item}/> </QTYCONTEXT.Provider>
+        return  <ItemCard key={data['product-reviews']} Index = {index} content={item}/> 
     })
     
 return (
